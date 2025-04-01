@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3hs0l20jvrhw"]
+
+[ext_resource type="Texture2D" uid="uid://1kbj1u2f4s6t" path="res://assets/sprites/tileset/spring_.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(37, 10)
+
+[node name="platform_grass" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 5.96046e-08)
+scale = Vector2(1.1875, 1.11111)
+texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(0, 7, 32, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nlgqw")
+one_way_collision = true

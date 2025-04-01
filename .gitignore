@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+.android/
+
+# Ignore imported assets
+.import/
+
+# Ignore log files
+*.log
