@@ -1,9 +1,9 @@
 extends Area2D
 
 @export var checkpoint_position: Vector2  # Stores the last checkpoint position
-@onready var character_body_2d: CharacterBody2D = %CharacterBody2D
+@onready var character_body_2d: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var anim: AnimatedSprite2D = character_body_2d.find_child("AnimatedSprite2D", true, false)
-@onready var death_label: Label = $"../../CharacterBody2D/Camera2D/DeathLabel"
+@onready var death_label: Label = get_tree().get_first_node_in_group("deathlabel")
 
 func _ready():
 	# Set the initial checkpoint to the starting position

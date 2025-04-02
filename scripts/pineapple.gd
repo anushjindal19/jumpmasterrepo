@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var score_label: Label = $"../../CharacterBody2D/Camera2D/ScoreLabel"
+@onready var score_label: Label = get_tree().get_first_node_in_group("scorelabel")
 
 func _ready():
 	add_to_group("fruits")

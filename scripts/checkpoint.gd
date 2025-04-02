@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var anim_sprite = $AnimatedSprite2D  # Adjust path if needed
 @export var is_starting_checkpoint: bool = false  # Determines if it's the first checkpoint
+@export var is_ending_checkpoint: bool = false 
 var checkpoint_activated = false  # Tracks if the checkpoint was already activated
 
 func _ready():
@@ -19,7 +20,10 @@ func _on_body_entered(body):
 
 			# Handle different animations for the first checkpoint vs normal checkpoints
 			if is_starting_checkpoint:
-				anim_sprite.play("start_flag_out")  # Starting checkpoint animation
+				anim_sprite.play("interacted")
+			if is_ending_checkpoint:
+				anim_sprite.play("interacted")
+
 			else:
 				if not checkpoint_activated:
 					checkpoint_activated = true

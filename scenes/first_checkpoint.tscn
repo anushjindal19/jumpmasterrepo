@@ -4,9 +4,6 @@
 [ext_resource type="Script" uid="uid://5b6k5ir8de7j" path="res://scripts/checkpoint.gd" id="1_yue3m"]
 [ext_resource type="Texture2D" uid="uid://cpf5m8mn7tiid" path="res://assets/sprites/assetpack/Items/Checkpoints/Start/Start (Idle).png" id="2_yue3m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1k4k"]
-size = Vector2(54, 41)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcrr6"]
 atlas = ExtResource("2_yue3m")
 region = Rect2(0, 0, 64, 64)
@@ -86,7 +83,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_pcrr6")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
@@ -142,21 +139,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_lgqj1")
 }],
 "loop": true,
-"name": &"start_flag_out",
+"name": &"interacted",
 "speed": 7.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1k4k"]
+size = Vector2(54, 41)
 
 [node name="first checkpoint" type="Area2D"]
 z_index = 1
 script = ExtResource("1_yue3m")
 is_starting_checkpoint = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 10.5)
-shape = SubResource("RectangleShape2D_w1k4k")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_rfomy")
-animation = &"start_flag_out"
-autoplay = "new_animation"
+animation = &"interacted"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 10.5)
+shape = SubResource("RectangleShape2D_w1k4k")
