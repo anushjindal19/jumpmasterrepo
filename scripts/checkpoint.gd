@@ -21,9 +21,8 @@ func _on_body_entered(body):
 			# Handle different animations for the first checkpoint vs normal checkpoints
 			if is_starting_checkpoint:
 				anim_sprite.play("interacted")
-			if is_ending_checkpoint:
+			elif is_ending_checkpoint:
 				anim_sprite.play("interacted")
-
 			else:
 				if not checkpoint_activated:
 					checkpoint_activated = true

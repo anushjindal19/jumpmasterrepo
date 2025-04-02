@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dh1vl4edgunih" path="res://scenes/end_checkpoint.tscn" id="6_3pdoh"]
 [ext_resource type="PackedScene" uid="uid://ceky2ebtmebih" path="res://scenes/checkpoint.tscn" id="6_p57ef"]
 [ext_resource type="Script" uid="uid://5b6k5ir8de7j" path="res://scripts/checkpoint.gd" id="7_hc45n"]
-[ext_resource type="PackedScene" uid="uid://dh3a71g628qm6" path="res://scenes/pineapple.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dh3a71g628qm6" path="res://scenes/fruits/pineapple.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bj47pnwqb7n5m" path="res://scenes/platforms/platform_autumn.tscn" id="8_gee14"]
 [ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://bfjdy5lwiunxc" path="res://scenes/damagers/non_avoidable_log.tscn" id="10_vtaks"]
@@ -384,12 +384,14 @@ script = ExtResource("3_lnu2h")
 position = Vector2(0, 256)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
-[node name="pineapples" type="Node" parent="."]
+[node name="fruits" type="Node" parent="."]
 
-[node name="pineapple" parent="pineapples" instance=ExtResource("7_u5sy4")]
+[node name="pineapples" type="Node" parent="fruits"]
+
+[node name="pineapple" parent="fruits/pineapples" instance=ExtResource("7_u5sy4")]
 position = Vector2(50, -245)
 
-[node name="pineapple2" parent="pineapples" instance=ExtResource("7_u5sy4")]
+[node name="pineapple2" parent="fruits/pineapples" instance=ExtResource("7_u5sy4")]
 position = Vector2(513, -117)
 
 [node name="checkpoints" type="Node" parent="."]

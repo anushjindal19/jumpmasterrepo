@@ -295,5 +295,5 @@ shape = SubResource("RectangleShape2D_yqsag")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r1kaj")
-animation = &"new_animation"
+animation = &"checkpoint_reach"
 autoplay = "new_animation"
