@@ -1,0 +1,208 @@
+[gd_scene load_steps=10 format=3 uid="uid://errlvqslcov8"]
+
+[ext_resource type="Script" uid="uid://brp15mgmffw6j" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
+bg_color = Color(0.815686, 0.921569, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.647059, 0.847059, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.878431, 0.878431, 0.878431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+resource_name = "typing"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu84c"]
+_data = {
+&"idle": SubResource("Animation_wu84c"),
+&"typing": SubResource("Animation_8ln24")
+}
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ekxnf")
+
+[node name="(add thumbnail later)" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bqqt6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -42.0
+offset_right = 79.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+text = "Start Game"
+
+[node name="Levels" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+text = "Levels
+"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+text = "Settings
+"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+text = "Exit
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -180.0
+offset_right = 258.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.768627, 0, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 48
+text = "JUMP MASTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_wu84c")
+}
+autoplay = "typing"
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

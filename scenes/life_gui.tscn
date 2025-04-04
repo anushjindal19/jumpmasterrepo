@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp71ot6w7w22c"]
+
+[ext_resource type="Texture2D" uid="uid://bap26vnes0nxw" path="res://assets/sprites/assetpack/Main Characters/Ninja Frog/Idle (32x32).png" id="1_xeqbx"]
+
+[node name="lifeGui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(20.25, 20)
+scale = Vector2(1.71739, 1.66667)
+texture = ExtResource("1_xeqbx")
+region_enabled = true
+region_rect = Rect2(4, 8, 23, 24)

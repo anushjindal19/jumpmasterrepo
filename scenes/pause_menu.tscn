@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnd0pnxrbwcg"]
+[gd_scene load_steps=13 format=3 uid="uid://dnd0pnxrbwcg"]
 
-[ext_resource type="Script" uid="uid://bntlaqcjage0x" path="res://pause_menu.gd" id="1_1s2dm"]
+[ext_resource type="Script" uid="uid://bntlaqcjage0x" path="res://scripts/pause_menu.gd" id="1_1s2dm"]
 [ext_resource type="Shader" uid="uid://5twk7v3exibb" path="res://scripts/pause_menu.gdshader" id="2_88e76"]
 [ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_knqa7"]
 [ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="4_71k7c"]
 [ext_resource type="Texture2D" uid="uid://b86uysq53ui4h" path="res://assets/sprites/assetpack/Menu/Buttons/Play.png" id="5_cmnsq"]
+[ext_resource type="Texture2D" uid="uid://bqiyy1u30h0jk" path="res://assets/sprites/assetpack/Menu/Buttons/Back.png" id="6_88e76"]
 [ext_resource type="Texture2D" uid="uid://w0tnksibpl5p" path="res://assets/sprites/assetpack/Menu/Buttons/Restart.png" id="6_ofnjo"]
 [ext_resource type="Texture2D" uid="uid://bt4is4ik5u236" path="res://assets/sprites/assetpack/Menu/Buttons/Close.png" id="7_1rgno"]
 
@@ -148,6 +149,13 @@ theme_override_font_sizes/font_size = 16
 text = "Restart"
 icon = ExtResource("6_ofnjo")
 
+[node name="Exit to Main Menu" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_71k7c")
+theme_override_font_sizes/font_size = 16
+text = "Main Menu"
+icon = ExtResource("6_88e76")
+
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_71k7c")
@@ -176,4 +184,5 @@ libraries = {
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit to Main Menu" to="." method="_on_exit_to_main_menu_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

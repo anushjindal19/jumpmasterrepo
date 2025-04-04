@@ -19,6 +19,7 @@ func _physics_process(delta):
 
 	# Handle jump and double jump
 	if Input.is_action_just_pressed("jump") and can_jump:
+		$AudioStreamPlayer2D.play()
 		if is_on_wall() and Input.is_action_pressed("right"):
 			velocity.y = JUMP_VELOCITY
 			velocity.x = -WALL_JUMP_PUSHBACK
@@ -40,12 +41,14 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			anim.play("double_jump")  # Play double jump animation
 			can_double_jump = false
-			is_double_jumping = true  # Prevent playing double jump animation again
+			is_double_jumping = true
+			can_jump = false  # Prevent playing double jump animation again
 		elif can_double_jump and not is_double_jumping and not is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			anim.play("double_jump")
 			can_double_jump = false
 			is_double_jumping = true
+			can_jump = false
 	elif is_on_floor() or is_on_wall():
 		can_jump = true
 		can_double_jump = true

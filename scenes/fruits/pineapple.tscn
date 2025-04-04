@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://dh3a71g628qm6"]
+[gd_scene load_steps=30 format=3 uid="uid://dh3a71g628qm6"]
 
 [ext_resource type="Script" uid="uid://be2t24uxi0myw" path="res://scripts/pineapple.gd" id="1_0e4s3"]
 [ext_resource type="Texture2D" uid="uid://pte2fhxqfc6k" path="res://assets/sprites/assetpack/Items/Fruits/Collected.png" id="1_dakpr"]
 [ext_resource type="Texture2D" uid="uid://cip7vjrgwcgxl" path="res://assets/sprites/assetpack/Items/Fruits/Pineapple.png" id="2_0e4s3"]
+[ext_resource type="AudioStream" uid="uid://dhjedx720dg6d" path="res://assets/sounds/tsamp3_pineapple_lump-97007-[AudioTrimmer.com].mp3" id="4_0nmcs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kok3i"]
 atlas = ExtResource("1_dakpr")
@@ -193,5 +194,9 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_tu2t3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0nmcs")
+volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,11 +1,17 @@
 extends Area2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var score_label: Label = get_tree().get_first_node_in_group("scorelabel")
+@onready var score_label: Label = $"../../../CharacterBody2D/Camera2D/ScoreLabel"
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var has_interacted = false
 
 func _on_body_entered(_body):
-	score_label.add_point_pineapple()
-	collision_mask &= ~((1 << 1) | (1 << 2))
-	anim.play("collected")
-	await anim.animation_finished
-	queue_free()
+	if has_interacted:
+		return
+	else:
+		has_interacted = true
+		score_label.add_point_apple()
+		audio_stream_player_2d.play()
+		anim.play("collected")
+		await anim.animation_finished
+		queue_free()
