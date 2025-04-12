@@ -14,10 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://bj47pnwqb7n5m" path="res://scenes/platforms/platform_autumn.tscn" id="8_gee14"]
 [ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://bfjdy5lwiunxc" path="res://scenes/damagers/non_avoidable_log.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" uid="uid://dnd0pnxrbwcg" path="res://scenes/pause_menu.tscn" id="13_kvuet"]
+[ext_resource type="PackedScene" uid="uid://dnd0pnxrbwcg" path="res://scenes/GUI and Menus/pause_menu.tscn" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://dl3os3mfiypg" path="res://scenes/player.tscn" id="13_p75kv"]
 [ext_resource type="Script" uid="uid://d0d1fuyqu6mro" path="res://scripts/label.gd" id="14_m7v2g"]
-[ext_resource type="PackedScene" uid="uid://do1ysug68wwf" path="res://scenes/life_container.tscn" id="17_a1gjd"]
+[ext_resource type="PackedScene" uid="uid://do1ysug68wwf" path="res://scenes/GUI and Menus/life_container.tscn" id="17_a1gjd"]
 [ext_resource type="AudioStream" uid="uid://cliq2xueabko8" path="res://assets/sounds/retro-game-arcade-236133.mp3" id="19_u7ucq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kvpfn"]
@@ -678,7 +678,7 @@ scale = Vector2(0.55284, 0.557901)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("13_p75kv")]
 unique_name_in_owner = true
-position = Vector2(-71, -24)
+position = Vector2(-60, -52)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(2, 16)
@@ -709,7 +709,6 @@ scale = Vector2(0.35, 0.35)
 position = Vector2(2, 16)
 stream = ExtResource("19_u7ucq")
 volume_db = -10.35
-autoplay = true
 parameters/looping = true
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]

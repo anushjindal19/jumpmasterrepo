@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://errlvqslcov8"]
 
-[ext_resource type="Script" uid="uid://brp15mgmffw6j" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://brp15mgmffw6j" path="res://scripts/main_menu.gd" id="1_bl6hq"]
+[ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_pga4x"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
 
@@ -75,7 +75,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-script = ExtResource("1_ekxnf")
+script = ExtResource("1_bl6hq")
 
 [node name="(add thumbnail later)" type="Panel" parent="."]
 clip_contents = true
@@ -113,14 +113,14 @@ theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_fonts/font = ExtResource("2_pga4x")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
-text = "Start Game"
+text = "Start New Game"
 
-[node name="Levels" type="Button" parent="VBoxContainer"]
+[node name="Continue" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(250, 40)
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
@@ -130,13 +130,12 @@ theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_fonts/font = ExtResource("2_pga4x")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
-text = "Levels
-"
+text = "Continue"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(250, 40)
@@ -148,7 +147,7 @@ theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_fonts/font = ExtResource("2_pga4x")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
@@ -166,7 +165,7 @@ theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_fonts/font = ExtResource("2_pga4x")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
@@ -188,7 +187,7 @@ offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.768627, 0, 1)
-theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_fonts/font = ExtResource("2_pga4x")
 theme_override_font_sizes/font_size = 48
 text = "JUMP MASTER"
 horizontal_alignment = 1
@@ -203,6 +202,6 @@ libraries = {
 autoplay = "typing"
 
 [connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

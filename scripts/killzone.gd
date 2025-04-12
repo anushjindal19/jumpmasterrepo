@@ -21,7 +21,10 @@ func _on_body_entered(body):
 		await anim.animation_finished
 		Engine.time_scale = 1
 		anim.speed_scale = 1
-		body.set_deferred("position", checkpoint_position)
-		body.velocity = Vector2.ZERO
-		anim.play("idle")
-		body.move_and_slide()
+		if life_container.get_child_count() > 0:
+			body.set_deferred("position", checkpoint_position)
+			body.velocity = Vector2.ZERO
+			anim.play("idle")
+			body.move_and_slide()
+		else:
+			get_tree().change_scene_to_file("res://scenes/died.tscn")

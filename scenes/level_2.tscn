@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dmdjbqgf08sds" path="res://assets/sprites/tileset/world_tileset.png" id="1_pbc48"]
 [ext_resource type="Script" uid="uid://xp6qny7um22" path="res://scripts/killzone.gd" id="2_eqxsl"]
-[ext_resource type="PackedScene" uid="uid://dnd0pnxrbwcg" path="res://scenes/pause_menu.tscn" id="3_b4j7a"]
+[ext_resource type="PackedScene" uid="uid://dnd0pnxrbwcg" path="res://scenes/GUI and Menus/pause_menu.tscn" id="3_b4j7a"]
 [ext_resource type="PackedScene" uid="uid://bryu8qq61wj63" path="res://scenes/first_checkpoint.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://dl3os3mfiypg" path="res://scenes/player.tscn" id="5_ne2mo"]
 [ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="6_6cvei"]
