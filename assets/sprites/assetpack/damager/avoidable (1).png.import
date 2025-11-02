@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjksli3nbjyoq"
-path="res://.godot/imported/vignette.png-9de394b5904608288a4d59dfe851cd41.ctex"
+uid="uid://cibwx47e0cxkr"
+path="res://.godot/imported/avoidable (1).png-62c96419538512b9ebd0fb20ec68b585.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/assetpack/vignette.png"
-dest_files=["res://.godot/imported/vignette.png-9de394b5904608288a4d59dfe851cd41.ctex"]
+source_file="res://assets/sprites/assetpack/damager/avoidable (1).png"
+dest_files=["res://.godot/imported/avoidable (1).png-62c96419538512b9ebd0fb20ec68b585.ctex"]
 
 [params]
 

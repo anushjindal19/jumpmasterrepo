@@ -11,6 +11,9 @@ var is_wall_sliding = false
 var can_jump = true
 var can_double_jump = true
 var is_double_jumping = false  # Tracks if the double jump animation has been triggered
+@onready var life_container: HBoxContainer = $Camera2D/lifeContainer
+var checkpoint_position = Vector2.ZERO
+var already_damaged = false
 
 func _physics_process(delta):
 	# Apply gravity

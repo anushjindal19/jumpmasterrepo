@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bfjdy5lwiunxc"]
 
 [ext_resource type="Script" uid="uid://ih8qddvcefjc" path="res://scripts/non_avoidable_log.gd" id="1_4csl7"]
-[ext_resource type="Texture2D" uid="uid://bfhgkdi1i1cc7" path="res://assets/sprites/non avoidable log.png" id="1_asiqv"]
+[ext_resource type="Texture2D" uid="uid://bfhgkdi1i1cc7" path="res://assets/sprites/assetpack/damager/non avoidable log.png" id="1_asiqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asiqv"]
 atlas = ExtResource("1_asiqv")
@@ -92,8 +92,7 @@ script = ExtResource("1_4csl7")
 scale = Vector2(0.19, 0.19)
 sprite_frames = SubResource("SpriteFrames_huv5q")
 autoplay = "default"
-frame = 9
-frame_progress = 0.238776
+frame_progress = 0.406263
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_evcs5")

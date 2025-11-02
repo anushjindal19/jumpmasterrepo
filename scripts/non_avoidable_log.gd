@@ -9,22 +9,16 @@ func _ready():
 	# Set the initial checkpoint to the starting position
 	checkpoint_position = $"../../checkpoints/first checkpoint".position  # Adjust path if needed
 	add_to_group("spikes")
+
+func _enter_tree():
 	if not is_connected("body_entered", Callable(self, "_on_body_entered")):
 		connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		Engine.time_scale = 0.1
-		anim.speed_scale = 1.0 / Engine.time_scale
-		anim.play("damagetaken")
-		life_container.reduce_life()
-		await anim.animation_finished
-		Engine.time_scale = 1
-		anim.speed_scale = 1
-		if life_container.get_child_count() > 0:
-			body.set_deferred("position", checkpoint_position)
-			body.velocity = Vector2.ZERO
-			anim.play("idle")
-			body.move_and_slide()
-		else:
-			get_tree().change_scene_to_file("res://scenes/died.tscn")
+		PlayerUtils.damage_player(
+			body,
+			body.anim,
+			body.life_container,
+			body.checkpoint_position
+		)

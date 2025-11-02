@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-@onready var LifeGuiClass = preload("res://scenes/life_gui.tscn")
+@onready var LifeGuiClass = preload("res://scenes/GUI and Menus/life_gui.tscn")
 
 func setMaxLifes(_max: int):
 	for i in range(_max):

@@ -7,7 +7,7 @@ func _ready():
 	animation_player.play("idle")
 
 func _on_start_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level 1.tscn")
+	PlayerUtils.reload_current_level()
 
 
 func _on_settings_pressed() -> void:

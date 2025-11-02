@@ -1,0 +1,165 @@
+[gd_scene load_steps=11 format=3 uid="uid://c6hhllndkx4xm"]
+
+[ext_resource type="Script" uid="uid://d33rqsrkf8rx8" path="res://scripts/next_level.gd" id="1_nxin1"]
+[ext_resource type="Shader" uid="uid://5twk7v3exibb" path="res://scripts/pause_menu.gdshader" id="2_yn5qj"]
+[ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="3_merhv"]
+[ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_pv6yg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hnlu"]
+shader = ExtResource("2_yn5qj")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxin1"]
+bg_color = Color(0.706148, 0.586501, 0.253634, 1)
+
+[sub_resource type="Animation" id="Animation_yn5qj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_merhv"]
+resource_name = "bounce"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.33, 1.33), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nxin1"]
+resource_name = "idle"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pv6yg"]
+_data = {
+&"RESET": SubResource("Animation_yn5qj"),
+&"bounce": SubResource("Animation_merhv"),
+&"idle": SubResource("Animation_nxin1")
+}
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nxin1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4hnlu")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.257422, 0.242574, 0.106959, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nxin1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="next level" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_merhv")
+theme_override_font_sizes/font_size = 16
+text = "Next Level"
+
+[node name="restart" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_merhv")
+theme_override_font_sizes/font_size = 16
+text = "Restart"
+
+[node name="main menu" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_merhv")
+theme_override_font_sizes/font_size = 16
+text = "Main Menu"
+
+[node name="quit" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 55)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_merhv")
+theme_override_font_sizes/font_size = 16
+text = "Quit"
+
+[node name="YouBeatIt!" type="Label" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.19
+anchor_right = 0.5
+anchor_bottom = 0.19
+offset_left = -576.0
+offset_top = -67.12
+offset_right = 576.0
+offset_bottom = 66.88
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 67)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_pv6yg")
+theme_override_font_sizes/font_size = 64
+text = "YOU BEAT IT!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YouBeatIt!"]
+libraries = {
+&"": SubResource("AnimationLibrary_pv6yg")
+}
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/next level" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/main menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

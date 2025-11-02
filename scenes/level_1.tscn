@@ -1,23 +1,22 @@
-[gd_scene load_steps=26 format=4 uid="uid://df14wt2umt57"]
+[gd_scene load_steps=31 format=4 uid="uid://cygnx45welmuj"]
 
-[ext_resource type="Script" uid="uid://kjblc44iypet" path="res://scripts/level_1.gd" id="1_igmy8"]
-[ext_resource type="Texture2D" uid="uid://dmdjbqgf08sds" path="res://assets/sprites/assetpack/tileset/world_tileset.png" id="1_pbc48"]
-[ext_resource type="Script" uid="uid://xp6qny7um22" path="res://scripts/killzone.gd" id="2_eqxsl"]
-[ext_resource type="PackedScene" uid="uid://dnd0pnxrbwcg" path="res://scenes/GUI and Menus/pause_menu.tscn" id="3_b4j7a"]
-[ext_resource type="Texture2D" uid="uid://poou4ioq460l" path="res://assets/sprites/assetpack/tileset/Cloud Tileset.png" id="3_wdtqu"]
-[ext_resource type="PackedScene" uid="uid://bryu8qq61wj63" path="res://scenes/first_checkpoint.tscn" id="4_eqxsl"]
-[ext_resource type="PackedScene" uid="uid://de8ipfk2kp57q" path="res://scenes/fruits/apple.tscn" id="5_7qsfm"]
-[ext_resource type="PackedScene" uid="uid://dl3os3mfiypg" path="res://scenes/player.tscn" id="5_ne2mo"]
-[ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="6_6cvei"]
-[ext_resource type="PackedScene" uid="uid://bsp1u51etp7jr" path="res://scenes/fruits/cherry.tscn" id="6_7qsfm"]
-[ext_resource type="PackedScene" uid="uid://ceky2ebtmebih" path="res://scenes/checkpoint.tscn" id="7_bv48q"]
-[ext_resource type="PackedScene" uid="uid://btd6o00l2v78u" path="res://scenes/fruits/banana.tscn" id="7_k22d5"]
-[ext_resource type="Script" uid="uid://d0d1fuyqu6mro" path="res://scripts/label.gd" id="7_que50"]
-[ext_resource type="PackedScene" uid="uid://dh3a71g628qm6" path="res://scenes/fruits/pineapple.tscn" id="8_k6a82"]
-[ext_resource type="PackedScene" uid="uid://dh1vl4edgunih" path="res://scenes/end_checkpoint.tscn" id="8_k22d5"]
-[ext_resource type="PackedScene" uid="uid://bfjdy5lwiunxc" path="res://scenes/damagers/non_avoidable_log.tscn" id="11_1sb0y"]
-[ext_resource type="PackedScene" uid="uid://do1ysug68wwf" path="res://scenes/GUI and Menus/life_container.tscn" id="15_vhnap"]
-[ext_resource type="AudioStream" uid="uid://cliq2xueabko8" path="res://assets/sounds/retro-game-arcade-236133.mp3" id="16_vwfin"]
+[ext_resource type="Script" uid="uid://kjblc44iypet" path="res://scripts/level_1.gd" id="1_1s4pk"]
+[ext_resource type="Texture2D" uid="uid://dmdjbqgf08sds" path="res://assets/sprites/assetpack/tileset/world_tileset.png" id="2_x2xxo"]
+[ext_resource type="Texture2D" uid="uid://poou4ioq460l" path="res://assets/sprites/assetpack/tileset/Cloud Tileset.png" id="3_2cbcq"]
+[ext_resource type="Script" uid="uid://xp6qny7um22" path="res://scripts/killzone.gd" id="4_isj1j"]
+[ext_resource type="PackedScene" uid="uid://dh3a71g628qm6" path="res://scenes/fruits/pineapple.tscn" id="5_so66j"]
+[ext_resource type="PackedScene" uid="uid://de8ipfk2kp57q" path="res://scenes/fruits/apple.tscn" id="6_tr1x6"]
+[ext_resource type="PackedScene" uid="uid://bryu8qq61wj63" path="res://scenes/first_checkpoint.tscn" id="7_d5akn"]
+[ext_resource type="PackedScene" uid="uid://ceky2ebtmebih" path="res://scenes/checkpoint.tscn" id="8_wbtxt"]
+[ext_resource type="PackedScene" uid="uid://dh1vl4edgunih" path="res://scenes/end_checkpoint.tscn" id="9_x2fux"]
+[ext_resource type="PackedScene" uid="uid://b3hs0l20jvrhw" path="res://scenes/platforms/platform_grass.tscn" id="10_s7g0b"]
+[ext_resource type="PackedScene" uid="uid://bj47pnwqb7n5m" path="res://scenes/platforms/platform_autumn.tscn" id="11_mmfjm"]
+[ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="12_k8ld0"]
+[ext_resource type="PackedScene" uid="uid://dnd0pnxrbwcg" path="res://scenes/GUI and Menus/pause_menu.tscn" id="13_mbb35"]
+[ext_resource type="PackedScene" uid="uid://dl3os3mfiypg" path="res://scenes/player.tscn" id="14_iw4em"]
+[ext_resource type="Script" uid="uid://d0d1fuyqu6mro" path="res://scripts/label.gd" id="15_hnsmf"]
+[ext_resource type="PackedScene" uid="uid://do1ysug68wwf" path="res://scenes/GUI and Menus/life_container.tscn" id="16_nossa"]
+[ext_resource type="AudioStream" uid="uid://cliq2xueabko8" path="res://assets/sounds/retro-game-arcade-236133.mp3" id="17_hjqri"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kvpfn"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -32,7 +31,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gee14"]
-texture = ExtResource("1_pbc48")
+texture = ExtResource("2_x2xxo")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -197,7 +196,7 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_gee14")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7ucq"]
-texture = ExtResource("3_wdtqu")
+texture = ExtResource("3_2cbcq")
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -233,8 +232,180 @@ sources/0 = SubResource("TileSetAtlasSource_u7ucq")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 distance = -64.0
 
-[node name="level 2" type="Node2D"]
-script = ExtResource("1_igmy8")
+[sub_resource type="Animation" id="Animation_iywne"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(371, -58)]
+}
+
+[sub_resource type="Animation" id="Animation_lbhrr"]
+resource_name = "movement"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25, 2.74),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(362, -58), Vector2(652, -58)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
+_data = {
+&"RESET": SubResource("Animation_iywne"),
+&"movement": SubResource("Animation_lbhrr")
+}
+
+[sub_resource type="Animation" id="Animation_0tnpc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1025, -99)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plat4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1367, -97)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../plat5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1637, -74)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../plat6:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1997, -96)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../plat7:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2290, -95)]
+}
+
+[sub_resource type="Animation" id="Animation_gee14"]
+resource_name = "movement"
+length = 9.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99, 3, 5, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1025, -99), Vector2(1109, -139), Vector2(1379, -174), Vector2(1233, -93), Vector2(1140, -177), Vector2(1025, -99)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../plat4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99, 3, 5, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1367, -97), Vector2(1295, -46), Vector2(1296, -171), Vector2(1468, -91), Vector2(1585, 10), Vector2(1367, -97)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../plat5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.99, 3, 5, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1637, -74), Vector2(1732, -130), Vector2(1864, -50), Vector2(1734, -114), Vector2(1525, -25), Vector2(1637, -74)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../plat6:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.99, 3, 5, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1997, -96), Vector2(2075, -6), Vector2(1927, -7), Vector2(2084, -22), Vector2(2223, -101), Vector2(1997, -96)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../plat7:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.99, 3, 5, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2290, -95), Vector2(2365, -138), Vector2(2450, -115), Vector2(2302, -164), Vector2(2288, -51), Vector2(2290, -95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
+_data = {
+&"RESET": SubResource("Animation_0tnpc"),
+&"movement": SubResource("Animation_gee14")
+}
+
+[node name="level 1" type="Node2D"]
+script = ExtResource("1_1s4pk")
 
 [node name="sky" type="TileMapLayer" parent="."]
 scale = Vector2(1.02179, 1)
@@ -243,16 +414,16 @@ tile_set = SubResource("TileSet_0tnpc")
 
 [node name="clouds" type="TileMapLayer" parent="."]
 position = Vector2(-17, 120)
-tile_map_data = PackedByteArray("AAAQAPH/AAAAAAEAAAByAO3/AAAAAAMAAACMAPD/AAAAAAMAAABYAPD/AAABAAIAAAAiAPL/AAABAAIAAABBAO7/AAABAAIAAAA+AO3/AAAAAAEAAABEAO3/AAAAAAEAABB0AOz/AAAAAAEAABCOAO//AAABAAIAAACKAO7/AAAAAAEAAAAEAPP/AAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAACAOn/AAAAAAMAAAANAO3/AAABAAIAAAA2AOn/AAABAAIAAACHAOn/AAABAAIAAADTAOr/AAABAAIAAABFAef/AAABAAIAAAAhAd//AAAAAAEAAAAGAeX/AAAAAAEAAADPAOj/AAAAAAEAAACKAOv/AAAAAAEAAABbAOn/AAAAAAEAAAAQAOv/AAACAAAAAABKAO3/AAACAAAAAABfAOf/AAACAAAAAAB1APD/AAACAAAAAACwAOr/AAACAAAAAAD0AOf/AAACAAAAAAAkAd7/AAACAAAAAAAlAeD/AAAAAAEAAADx//D/AAAAAAEAAAAnAOP/AAAAAAMAAAAlAOL/AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_xwfau")
 
 [node name="map" type="TileMapLayer" parent="."]
 scale = Vector2(1.02179, 1)
-tile_map_data = PackedByteArray("AAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAEAAAD8/wIAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD9/wEAAAAAAAEAAAD8/wEAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAEAAAAAAAEAAAACAAEAAAAAAAEAAAACAAIAAAAAAAEAAAAAAAEAAAABAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAAKAAAAAAAAAAEAAAALAAAAAAAAAAEAAAAMAAAAAAAAAAEAAAAMAAEAAAAAAAEAAAALAAEAAAAAAAEAAAAXAPz/AAAAAAAAAAAVAPz/AAAAAAAAAAAUAP3/AAAAAAAAAAAWAPz/AAAAAAAAAAAWAP3/AAAAAAEAAAAWAP7/AAAAAAEAAAAVAP7/AAAAAAEAAAAXAP3/AAAAAAEAAAAVAP3/AAAAAAEAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAEAAAAAAAEAAAAfAAEAAAAAAAEAAAAeAAEAAAAAAAEAAAAeAAIAAAAAAAEAAAAfAAIAAAAAAAEAAAAgAAEAAAAAAAEAAAAhAAAAAAAAAAAAAAAqAP3/AAAAAAAAAAArAP3/AAAAAAAAAAAsAP3/AAAAAAAAAAAsAP7/AAAAAAEAAAArAP7/AAAAAAEAAAAqAP7/AAAAAAEAAAAtAP7/AAAAAAEAAAApAP7/AAAAAAEAAAApAP3/AAAAAAAAAAAoAP7/AAAAAAAAAAAtAP3/AAAAAAAAAAAzAP3/AAAAAAAAAAA6AP3/AAAAAAAAAABBAP3/AAAAAAAAAABIAP3/AAAAAAAAAABJAP3/AAAJAAAAAABKAP3/AAAKAAAAAABLAP3/AAALAAAAAABMAP3/AAAAAAAAAABNAP3/AAAAAAAAAABOAP3/AAAAAAAAAABPAP3/AAAAAAAAAABMAP7/AAAAAAEAAABNAP7/AAAAAAEAAABOAP7/AAAAAAEAAABOAP//AAAAAAEAAABPAP7/AAABAAAAAABIAP7/AAAAAAEAAABJAP//AAAAAAEAAABLAP//AAABAAEAAABKAP//AAAAAAEAAABLAP7/AAAAAAEAAABJAP7/AAABAAEAACCKAP3/AAAAAAAAAACKAP7/AAAAAAEAAACLAP3/AAAAAAAAAACLAP7/AAAAAAEAAACLAP//AAABAAEAAACMAP3/AAAAAAAAAACMAP7/AAAAAAEAAACMAP//AAAAAAEAAACNAP3/AAAAAAAAAACNAP7/AAAAAAEAAACNAP//AAAAAAEAAAAhAP//AAABAAUAAAAeAAAAAAAAAAcAAAAUAPz/AAABAAUAAAAMAP7/AAAGAAcAAAAtAPz/AAAIAAgAAAAzAPv/AAAAAAMAAABIAPr/AAACAAQAAABIAPz/AAACAAgAAABKAP7/AAAAAAcAAABZAP3/AAAAAAAAAABnAP3/AAAAAAAAAACCAP3/AAAAAAAAAACJAP3/AAAAAAAAAACIAP3/AAAAAAAAAACJAP7/AAABAAAAAABpAPv/AAAAAAAAAABuAP7/AAAAAAAAAAB8APv/AAAAAAAAAABTAP3/AAAAAAAAAABaAPr/AAAAAAAAAABgAP3/AAAAAAAAAABhAPr/AAAAAAAAAABwAPr/AAAAAAAAAAB2APz/AAAAAAAAAACUAPv/AAAAAAAAAACZAPn/AAAAAAAAAACaAPn/AAAAAAAAAACVAPX/AAAAAAAAAACQAPf/AAAAAAAAAACRAP//AAAAAAAAAACZAPL/AAAAAAAAAACaAPL/AAAAAAAAAAChAPb/AAAAAAAAAACiAPb/AAAAAAAAAACnAPb/AAAAAAAAAACoAPb/AAAAAAAAAACtAPb/AAAAAAAAAACsAPb/AAAAAAAAAAC1APb/AAAAAAAAAAC0APb/AAAAAAAAAACzAPb/AAAAAAAAAAC2APb/AAAAAAAAAAC2APf/AAAAAAEAAAC1APf/AAAAAAEAAAC1APj/AAAAAAEAAAC0APf/AAAAAAEAAAC2APj/AAABAAEAAACtAPX/AAAGAAYAAAChAPX/AAABAAMAAACaAPj/AAABAAUAAACVAPT/AAABAAYAAACaAPf/AAAGAAMAAACIAPv/AAAAAAMAAABuAP3/AAAAAAcAAABaAPn/AAABAAQAAABpAPr/AAABAAMAAABgAPz/AAABAAUAAACgAPb/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAD8/wEAAAAAAAEAAAD9/wEAAAABAAEAAAD+/wEAAAAAAAEAAAD//wEAAAAAAAEAAAABAAEAAAAAAAEAAAABAAIAAAAAAAEAAAABAAMAAAAAAAEAAAACAAIAAAAAAAEAAAAAAAIAAAAAAAEAAAD//wIAAAAAAAEAAAD+/wIAAAAAAAEAAAD9/wIAAAAAAAEAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAEAAAD9/wMAAAAAAAEAAAD+/wMAAAAAAAEAAAD//wMAAAAAAAEAAAD7/wMAAAAAAAEAAAD7/wIAAAABAAEAAAAAAAEAAAABAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAANAP//AAAAAAAAAAAMAAAAAAABAAAAAAALAAAAAAAAAAEAAAAFAAEAAAAAAAEAAAARAP3/AAAAAAAAAAAQAP7/AAAAAAAAAAARAP7/AAAAAAEAAAAUAPz/AAAAAAEAAAApAPz/AAAAAAEAAAAtAPz/AAAAAAAAAAAuAPz/AAAAAAAAAAAvAPz/AAAAAAAAAAAwAPz/AAAAAAAAAAABAP//AAABAAUAAAAwAP3/AAAAAAEAAAAvAP3/AAAAAAEAAAAuAP7/AAABAAEAAAAuAP3/AAAAAAEAAAAvAP7/AAAAAAEAAAAtAP3/AAAAAAEAAAA2APr/AAACAAAAAAA3APr/AAACAAIAAAA4APr/AAAJAAEAAAA5APr/AAAKAAEAAAA6APr/AAALAAEAAAA7APr/AAACAAAAAAA8APr/AAACAAAAAAA3APv/AAADAAAAAAA8APv/AAACAAEAAAA7APv/AAADAAAAAAA8APz/AAACAAEAAAA6APz/AAACAAEAAAA7APz/AAACAAEAAACXAPn/AAAEAAAAAACaAPn/AAAEAAAAAACYAPr/AAAEAAAAAACZAPn/AAAEAAAAAACbAPn/AAAJAAIAAACcAPn/AAAKAAIAAACdAPn/AAALAAIAAACeAPn/AAAEAAAAAACfAPn/AAAEAAAAAACgAPn/AAAEAAAAAAChAPn/AAAEAAAAAACjAPn/AAAEAAAAAAChAPr/AAAEAAEAAACfAPr/AAAEAAEAAACgAPr/AAAFAAAAAACjAPr/AAAEAAEAAACiAPv/AAAEAAEAAAChAPv/AAAEAAEAAACgAPv/AAAEAAEAAACaAPr/AAAEAAEAAACZAPr/AAAEAAEAAACZAPv/AAAEAAEAAACYAPv/AAAEAAEAAACXAPv/AAAFAAAAAACXAPr/AAAEAAEAAABtAP//AAACAAAAAABuAP//AAACAAAAAABvAAAAAAACAAAAAABwAP//AAACAAAAAABuAAAAAAACAAEAAABtAAAAAAADAAAAAABuAAEAAAACAAEAAABwAAAAAAACAAEAAABsAAAAAAACAAEAAAA7APn/AAAHAAYAAAA6APv/AAABAAcAAAANAP7/AAAAAAgAAAAMAP//AAAAAAAAAAAHAAIAAAAAAAEAAAAGAAEAAAAAAAEAAAAHAAEAAAABAAEAAAARAP//AAAAAAEAAAAwAPv/AAABAAMAAABwAP3/AAAFAAMAAABsAP//AAAIAAYAAACiAPr/AAAEAAAAAACjAPf/AAAFAAMAAACZAPj/AAAEAAgAAACtAPr/AAAEAAAAAACuAPv/AAAEAAAAAACvAPr/AAAEAAAAAACwAPr/AAAEAAAAAAC9APj/AAAEAAAAAAC+APj/AAAEAAAAAADDAPf/AAAEAAAAAADEAPf/AAAEAAAAAADFAPf/AAAEAAEAAADJAPr/AAAEAAAAAADKAPr/AAAEAAAAAAC1APj/AAAEAAAAAAC2APn/AAAEAAAAAAC8APn/AAAEAAAAAAC2APr/AAAEAAEAAAC1APn/AAAEAAEAAAC1APr/AAAFAAEAAACsAPr/AAAEAAAAAACsAPv/AAAFAAEAAACtAPv/AAAEAAEAAACvAPv/AAAEAAEAAACwAPv/AAAFAAEAAACuAPz/AAAEAAEAAACtAPz/AAAEAAEAAACrAPv/AAAEAAEAAACwAPz/AAAEAAEAAACwAPn/AAABAAcAAAC8APj/AAAFAAcAAAC9APn/AAAEAAEAAAC8APr/AAAEAAEAAAC+APn/AAAEAAEAAAC9APr/AAAFAAEAAAC7APn/AAAEAAEAAADEAPj/AAAEAAEAAADEAPn/AAAEAAEAAADFAPj/AAAEAAEAAADDAPn/AAAEAAEAAADDAPj/AAABAAcAAADKAPv/AAAEAAEAAADJAPz/AAAEAAEAAADJAPv/AAAFAAEAAADKAPn/AAAHAAYAAADTAPv/AAAEAAAAAADLAPv/AAAEAAEAAADUAPr/AAAEAAAAAADVAPr/AAAEAAAAAADWAPr/AAAEAAAAAADUAPv/AAAEAAEAAADVAPv/AAAEAAEAAADXAPv/AAAEAAEAAADWAPv/AAAFAAAAAADUAPz/AAAEAAEAAADcAPn/AAAEAAAAAADdAPj/AAAEAAAAAADeAPj/AAAEAAAAAADfAPj/AAAEAAAAAADdAPn/AAAEAAEAAADeAPr/AAAEAAEAAADeAPn/AAAFAAEAAADfAPn/AAAEAAEAAADcAPr/AAAEAAEAAADnAPf/AAAJAAIAAADoAPf/AAAKAAIAAADpAPf/AAALAAIAAADlAPj/AAAEAAEAAADqAPf/AAAEAAAAAADmAPf/AAAEAAAAAADpAPn/AAAFAAAAAADqAPj/AAAEAAEAAADqAPn/AAAEAAEAAADmAPj/AAAEAAEAAADlAPn/AAAEAAEAAADtAPP/AAAEAAAAAADwAPL/AAAEAAAAAADuAPL/AAAEAAAAAADvAPL/AAAEAAAAAADxAPP/AAAEAAAAAADyAPL/AAAEAAAAAADwAPP/AAAEAAEAAADvAPP/AAAEAAEAAADwAPT/AAAEAAEAAADyAPP/AAAEAAEAAADuAPP/AAAEAAEAAADxAPX/AAAEAAEAAADyAPT/AAAEAAEAAADyAPX/AAAFAAAAAADxAPT/AAAIAAYAAADlAPf/AAABAAcAAADfAPf/AAAFAAYAAADTAPn/AAAFAAMAAAASAfD/AAAEAAAAAAAWAe//AAAEAAAAAAAVAe//AAAEAAAAAAAXAfD/AAAEAAEAAAAWAfD/AAAFAAgAAAAXAe//AAAEAAAAAAAYAfD/AAAFAAEAAAAXAfH/AAAEAAEAAAAZAfH/AAAEAAEAAAAYAfH/AAAEAAEAAAAVAfD/AAAEAAEAAAAWAfH/AAAEAAEAAAAZAfD/AAAEAAEAAAAZAe//AAAEAAAAAAAaAfD/AAAEAAAAAAAYAe//AAAEAAAAAAAbAe//AAAEAAAAAAAbAfD/AAAEAAEAAAAaAfH/AAAEAAEAAAAhAfD/AAAJAAIAAAAiAfD/AAAKAAIAAAAjAfD/AAALAAIAAAAoAfL/AAAJAAIAAAApAfL/AAAKAAIAAAAqAfL/AAALAAIAAAAvAfL/AAAEAAAAAAAgAfD/AAAEAAAAAAAkAfD/AAAEAAAAAAAnAfL/AAAEAAAAAAArAfL/AAAEAAAAAAAzAfL/AAAEAAAAAAAwAfL/AAAJAAIAAAAxAfL/AAAKAAIAAAAyAfL/AAALAAIAAAA2AfL/AAAEAAAAAAA3AfL/AAAEAAAAAAA4AfL/AAAEAAAAAAA5AfL/AAAEAAAAAAA6AfL/AAAEAAAAAAA7AfL/AAAEAAAAAAA2AfP/AAAEAAEAAAA2AfT/AAAEAAEAAAA3AfT/AAAEAAEAAAA3AfP/AAAEAAEAAAA4AfP/AAAEAAEAAAA5AfP/AAAEAAEAAAA5AfT/AAAEAAEAAAA4AfT/AAAEAAEAAAA6AfT/AAAEAAEAAAA7AfT/AAAEAAEAAAA7AfP/AAAEAAEAAAA6AfP/AAAEAAEAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAEAAAAiAPb/AAAAAAAAAAAjAPD/AAAAAAAAAAAjAPH/AAAAAAEAAAAkAO//AAAAAAcAAAAkAPD/AAAAAAAAAAAkAPH/AAAAAAEAAAAkAPL/AAABAAEAAAAlAPH/AAAAAAAAAAAhAPf/AAAAAAAAAAAiAPH/AAABAAEAAAAiAPf/AAABAAAAAAAjAPL/AAAAAAEAAAAkAPP/AAAAAAEAAAAlAPL/AAAAAAEAAAD8APX/AAAEAAAAAAD9APX/AAAJAAIAAAD+APX/AAAKAAIAAAD/APX/AAALAAIAAAAAAfX/AAAEAAAAAAAHAfL/AAAEAAAAAAAIAfL/AAAJAAIAAAAJAfL/AAAKAAIAAAAKAfL/AAALAAIAAAALAfL/AAAEAAAAAAA=")
 tile_set = SubResource("TileSet_0tnpc")
 
 [node name="killzone" type="Area2D" parent="."]
-script = ExtResource("2_eqxsl")
+script = ExtResource("4_isj1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(0, 256)
@@ -262,83 +433,81 @@ shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="pineapples" type="Node" parent="fruits"]
 
-[node name="pineapple" parent="fruits/pineapples" instance=ExtResource("8_k6a82")]
-position = Vector2(1850, -15)
+[node name="pineapple" parent="fruits/pineapples" instance=ExtResource("5_so66j")]
+position = Vector2(590, -298)
 
-[node name="pineapple2" parent="fruits/pineapples" instance=ExtResource("8_k6a82")]
-position = Vector2(2343, -231)
+[node name="pineapple3" parent="fruits/pineapples" instance=ExtResource("5_so66j")]
+position = Vector2(1193, -159)
+
+[node name="pineapple4" parent="fruits/pineapples" instance=ExtResource("5_so66j")]
+position = Vector2(2256, -143)
+
+[node name="pineapple7" parent="fruits/pineapples" instance=ExtResource("5_so66j")]
+position = Vector2(5199, -266)
+
+[node name="pineapple5" parent="fruits/pineapples" instance=ExtResource("5_so66j")]
+position = Vector2(1353, -173)
+
+[node name="pineapple2" parent="fruits/pineapples" instance=ExtResource("5_so66j")]
+position = Vector2(513, -117)
 
 [node name="apples" type="Node" parent="fruits"]
 
-[node name="apple" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
+[node name="apple" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
 position = Vector2(119, -25)
 
-[node name="apple2" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(284, -32)
+[node name="apple2" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(285, -63)
 
-[node name="apple3" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(471, -66)
+[node name="apple3" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(915, -122)
 
-[node name="apple4" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(793, -74)
+[node name="apple4" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(1800, -39)
 
-[node name="apple5" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(955, -62)
+[node name="apple5" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(2561, -134)
 
-[node name="apple6" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(1071, -68)
+[node name="apple6" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(2870, -122)
 
-[node name="banana" parent="fruits/apples" instance=ExtResource("7_k22d5")]
-position = Vector2(1495, -40)
+[node name="apple7" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(3102, -150)
 
-[node name="apple7" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(1365, -69)
+[node name="apple8" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(3306, -127)
 
-[node name="apple8" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(1642, -120)
+[node name="apple9" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(3495, -136)
 
-[node name="apple9" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(1919, -102)
+[node name="apple10" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(3804, -167)
 
-[node name="apple10" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(2123, -119)
+[node name="apple15" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(4749, -274)
 
-[node name="apple11" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(2482, -273)
-
-[node name="apple12" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(2704, -231)
-
-[node name="apple13" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(2790, -231)
-
-[node name="apple14" parent="fruits/apples" instance=ExtResource("5_7qsfm")]
-position = Vector2(2889, -229)
-
-[node name="cherry" type="Node" parent="fruits"]
-
-[node name="cherry" parent="fruits/cherry" instance=ExtResource("6_7qsfm")]
-position = Vector2(2511, -126)
+[node name="apple18" parent="fruits/apples" instance=ExtResource("6_tr1x6")]
+position = Vector2(4996, -240)
 
 [node name="checkpoints" type="Node" parent="."]
 
-[node name="first checkpoint" parent="checkpoints" instance=ExtResource("4_eqxsl")]
+[node name="first checkpoint" parent="checkpoints" instance=ExtResource("7_d5akn")]
 position = Vector2(-21, -31)
 
-[node name="checkpoint1" parent="checkpoints" instance=ExtResource("7_bv48q")]
-position = Vector2(687, -79)
+[node name="checkpoint1" parent="checkpoints" instance=ExtResource("8_wbtxt")]
+position = Vector2(764, -96)
 
-[node name="checkpoint2" parent="checkpoints" instance=ExtResource("7_bv48q")]
-position = Vector2(1267, -80)
+[node name="checkpoint2" parent="checkpoints" instance=ExtResource("8_wbtxt")]
+position = Vector2(2618, -143)
 
-[node name="checkpoint3" parent="checkpoints" instance=ExtResource("7_bv48q")]
-position = Vector2(2284, -80)
+[node name="checkpoint3" parent="checkpoints" instance=ExtResource("8_wbtxt")]
+position = Vector2(3920, -256)
 
-[node name="checkpoint4" parent="checkpoints" instance=ExtResource("7_bv48q")]
-position = Vector2(2633, -192)
+[node name="checkpoint4" parent="checkpoints" instance=ExtResource("8_wbtxt")]
+position = Vector2(4590, -303)
 
-[node name="end_checkpoint" parent="checkpoints" instance=ExtResource("8_k22d5")]
-position = Vector2(2971, -181)
+[node name="end_checkpoint" parent="checkpoints" instance=ExtResource("9_x2fux")]
+position = Vector2(5118, -246)
 scale = Vector2(0.665, 0.665)
 is_ending_checkpoint = true
 
@@ -346,122 +515,114 @@ is_ending_checkpoint = true
 
 [node name="grass" type="Node" parent="platforms"]
 
+[node name="plat2" parent="platforms/grass" instance=ExtResource("10_s7g0b")]
+position = Vector2(371, -58)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/grass/plat2"]
+libraries = {
+&"": SubResource("AnimationLibrary_p57ef")
+}
+autoplay = "movement"
+
 [node name="winter" type="Node" parent="platforms"]
 
 [node name="autumn" type="Node" parent="platforms"]
 
+[node name="platformer puzzle part" type="Node" parent="platforms/autumn"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platforms/autumn/platformer puzzle part"]
+root_node = NodePath("../plat3")
+libraries = {
+&"": SubResource("AnimationLibrary_vtaks")
+}
+autoplay = "movement"
+
+[node name="plat3" parent="platforms/autumn/platformer puzzle part" instance=ExtResource("11_mmfjm")]
+position = Vector2(1025, -99)
+
+[node name="plat4" parent="platforms/autumn/platformer puzzle part" instance=ExtResource("11_mmfjm")]
+position = Vector2(1367, -97)
+
+[node name="plat5" parent="platforms/autumn/platformer puzzle part" instance=ExtResource("11_mmfjm")]
+position = Vector2(1637, -74)
+
+[node name="plat6" parent="platforms/autumn/platformer puzzle part" instance=ExtResource("11_mmfjm")]
+position = Vector2(1997, -96)
+
+[node name="plat7" parent="platforms/autumn/platformer puzzle part" instance=ExtResource("11_mmfjm")]
+position = Vector2(2290, -95)
+
 [node name="text" type="Node" parent="."]
 
 [node name="movement help" type="Label" parent="text"]
-offset_left = 957.0
-offset_top = -112.0
-offset_right = 1116.0
-offset_bottom = -93.0
+offset_left = -238.0
+offset_top = -20.0
+offset_right = -79.0
+offset_bottom = -1.0
 theme_override_colors/font_color = Color(0.94902, 0.941176, 0.937255, 1)
-theme_override_fonts/font = ExtResource("6_6cvei")
+theme_override_fonts/font = ExtResource("12_k8ld0")
 theme_override_font_sizes/font_size = 8
-text = "Avoid stepping on the spiked logs!"
+text = "Use a and d or arrow keys
+to move around"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="damager (non avoidable)" type="Node" parent="."]
+[node name="fruits" type="Label" parent="text"]
+offset_left = 255.0
+offset_top = -197.0
+offset_right = 414.0
+offset_bottom = -178.0
+theme_override_colors/font_color = Color(0.94902, 0.941176, 0.937255, 1)
+theme_override_fonts/font = ExtResource("12_k8ld0")
+theme_override_font_sizes/font_size = 8
+text = "Collect fruits scattered 
+around the map!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="non_avoidable_log" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(899, -59)
-scale = Vector2(0.575, 0.575)
+[node name="dont give up" type="Label" parent="text"]
+offset_left = 1739.0
+offset_top = -89.0
+offset_right = 1898.0
+offset_bottom = -70.0
+theme_override_colors/font_color = Color(0.94902, 0.941176, 0.937255, 1)
+theme_override_fonts/font = ExtResource("12_k8ld0")
+theme_override_font_sizes/font_size = 8
+text = "Don't give up now :D"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="non_avoidable_log2" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(1013, -64)
-scale = Vector2(0.575, 0.575)
+[node name="checkpoints" type="Label" parent="text"]
+offset_left = 666.0
+offset_top = -143.0
+offset_right = 857.0
+offset_bottom = -124.0
+theme_override_colors/font_color = Color(0.94902, 0.941176, 0.937255, 1)
+theme_override_fonts/font = ExtResource("12_k8ld0")
+theme_override_font_sizes/font_size = 8
+text = "Checkpoints save your
+ process"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="non_avoidable_log3" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(1132, -64)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log4" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(1420, -73)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log5" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(1526, -73)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log11" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2184, -70)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log12" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2409, -38)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log13" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2469, -128)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log16" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2574, -167)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log17" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2702, -175)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log18" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2788, -172)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log20" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2703, -271)
-rotation = -1.5708
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log21" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2790, -272)
-rotation = -1.5708
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log22" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2884, -271)
-rotation = -1.5708
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log19" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2886, -172)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log14" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2343, -158)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log15" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2400, -233)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log7" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(1763, -71)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log8" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(1870, -71)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log9" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(1978, -71)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log10" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(2082, -71)
-scale = Vector2(0.575, 0.575)
-
-[node name="non_avoidable_log6" parent="damager (non avoidable)" instance=ExtResource("11_1sb0y")]
-position = Vector2(1641, -73)
-scale = Vector2(0.575, 0.575)
+[node name="jump help" type="Label" parent="text"]
+offset_left = 54.0
+offset_top = -64.0
+offset_right = 144.0
+offset_bottom = -45.0
+theme_override_colors/font_color = Color(0.94902, 0.941176, 0.937255, 1)
+theme_override_fonts/font = ExtResource("12_k8ld0")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump
+ "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_b4j7a")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("13_mbb35")]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_ne2mo")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("14_iw4em")]
 unique_name_in_owner = true
 position = Vector2(-60, -52)
 
@@ -477,12 +638,12 @@ offset_bottom = -114.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 1
-theme_override_fonts/font = ExtResource("6_6cvei")
+theme_override_fonts/font = ExtResource("12_k8ld0")
 theme_override_font_sizes/font_size = 8
 text = "0"
-script = ExtResource("7_que50")
+script = ExtResource("15_hnsmf")
 
-[node name="lifeContainer" parent="CharacterBody2D/Camera2D" instance=ExtResource("15_vhnap")]
+[node name="lifeContainer" parent="CharacterBody2D/Camera2D" instance=ExtResource("16_nossa")]
 layout_direction = 3
 offset_left = -365.0
 offset_top = -129.0
@@ -492,11 +653,9 @@ scale = Vector2(0.35, 0.35)
 
 [node name="music" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 position = Vector2(2, 16)
-stream = ExtResource("16_vwfin")
+stream = ExtResource("17_hjqri")
 volume_db = -10.35
 autoplay = true
 parameters/looping = true
-
-[node name="damager (avoidable)" type="Node" parent="."]
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]

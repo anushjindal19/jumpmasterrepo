@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dh1vl4edgunih"]
+[gd_scene load_steps=14 format=3 uid="uid://dh1vl4edgunih"]
 
 [ext_resource type="Texture2D" uid="uid://f3uj7o1uk7g4" path="res://assets/sprites/assetpack/Items/Checkpoints/End/End (Idle).png" id="1_4w5jw"]
+[ext_resource type="Script" uid="uid://5b6k5ir8de7j" path="res://scripts/checkpoint.gd" id="1_w8gy8"]
 [ext_resource type="Texture2D" uid="uid://c326do0tksvqg" path="res://assets/sprites/assetpack/Items/Checkpoints/End/End (Pressed) (64x64).png" id="2_w8gy8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yao4h"]
@@ -79,6 +80,7 @@ animations = [{
 size = Vector2(45, 47)
 
 [node name="Area2D" type="Area2D"]
+script = ExtResource("1_w8gy8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_an2bb")

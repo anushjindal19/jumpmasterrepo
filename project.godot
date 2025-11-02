@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="test2"
+config/name="jump master"
 run/main_scene="uid://errlvqslcov8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [audio]
 
 buses/default_bus_layout=""
+
+[autoload]
+
+PlayerUtils="*res://scripts/playerutil.gd"
 
 [editor]
 
