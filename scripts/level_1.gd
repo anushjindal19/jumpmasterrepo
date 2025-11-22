@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var life_container: HBoxContainer = $CharacterBody2D/Camera2D/lifeContainer
 
+
 func _ready() -> void:
 	life_container.setMaxLifes(3)
 

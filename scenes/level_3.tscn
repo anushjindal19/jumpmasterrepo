@@ -300,7 +300,7 @@ position = Vector2(-60, -52)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(2, 16)
-zoom = Vector2(2.4, 2.4)
+zoom = Vector2(2, 2)
 
 [node name="ScoreLabel" type="Label" parent="CharacterBody2D/Camera2D"]
 offset_left = -234.0

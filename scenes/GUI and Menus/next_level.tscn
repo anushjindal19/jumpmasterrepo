@@ -159,6 +159,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_pv6yg")
 }
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/next level" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/main menu" to="." method="_on_main_menu_pressed"]

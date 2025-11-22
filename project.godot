@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="jump master"
+config/name="FruitBound Odyssey"
 run/main_scene="uid://errlvqslcov8"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dhe36ak82fh1b"
 
 [audio]
 
@@ -22,6 +22,16 @@ buses/default_bus_layout=""
 [autoload]
 
 PlayerUtils="*res://scripts/playerutil.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/scale=2.0
+window/stretch/scale_mode="integer"
+window/icon="res://icon.svg"
+window/name="jump master"
 
 [editor]
 
