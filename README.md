@@ -1,6 +1,6 @@
-# JUMP MASTER — A 2D Platformer Made with Godot
+# FRUITBOUND ODYSSEY — A 2D Platformer Made with Godot
 
-**JUMP MASTER** is a fast-paced, Mario-style 2D platformer built using the **Godot Engine**.  
+**FRUITBOUND ODYSSEY** is a fast-paced, Mario-style 2D platformer built using the **Godot Engine**.  
 It expands on classic platforming mechanics with **wall sliding, double jumps, spikes, and collectible fruits**, combining nostalgia with a fresh twist.
 
 ---
