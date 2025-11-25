@@ -36,6 +36,6 @@ func damage_player(
 		anim.play("idle")
 		player_ref.move_and_slide()
 	else:
-		get_tree().change_scene_to_file("res://scenes/died.tscn")
+		get_tree().change_scene_to_file("res://scenes/GUI and Menus/died.tscn")
 
 	player_ref.set("already_damaged", false)

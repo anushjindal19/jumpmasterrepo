@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://d1mb1hnk42fxo"]
 
-[ext_resource type="Script" uid="uid://dvssq0oaeie1r" path="res://scripts/died.gd" id="1_d4luv"]
-[ext_resource type="Texture2D" uid="uid://bjksli3nbjyoq" path="res://assets/sprites/vignette.png" id="1_ppem4"]
-[ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="2_d4luv"]
-[ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_jw1bs"]
+[ext_resource type="Script" uid="uid://dvssq0oaeie1r" path="res://scripts/died.gd" id="1_m14vd"]
+[ext_resource type="Texture2D" uid="uid://bjksli3nbjyoq" path="res://assets/sprites/vignette.png" id="2_sttms"]
+[ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="3_p2xm5"]
+[ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_grl24"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mubft"]
 bg_color = Color(0.862745, 0.0784314, 0.235294, 1)
@@ -142,12 +142,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_d4luv")
+script = ExtResource("1_m14vd")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1280.0
+offset_bottom = 720.0
 
 [node name="ColorRect" type="ColorRect" parent="PanelContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -162,7 +162,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ppem4")
+texture = ExtResource("2_sttms")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
@@ -178,7 +178,7 @@ theme_override_colors/font_outline_color = Color(0.266667, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0.960784, 0.960784, 1)
 theme_override_constants/outline_size = 10
 theme_override_constants/align_to_largest_stylebox = 1
-theme_override_fonts/font = ExtResource("2_d4luv")
+theme_override_fonts/font = ExtResource("3_p2xm5")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mubft")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mr4x7")
@@ -193,7 +193,7 @@ theme_override_colors/font_outline_color = Color(0.266667, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0.960784, 0.960784, 1)
 theme_override_constants/outline_size = 10
 theme_override_constants/align_to_largest_stylebox = 1
-theme_override_fonts/font = ExtResource("2_d4luv")
+theme_override_fonts/font = ExtResource("3_p2xm5")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mubft")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mr4x7")
@@ -208,7 +208,7 @@ theme_override_colors/font_outline_color = Color(0.266667, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0.960784, 0.960784, 1)
 theme_override_constants/outline_size = 10
 theme_override_constants/align_to_largest_stylebox = 1
-theme_override_fonts/font = ExtResource("2_d4luv")
+theme_override_fonts/font = ExtResource("3_p2xm5")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mubft")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mr4x7")
@@ -223,7 +223,7 @@ theme_override_colors/font_outline_color = Color(0.266667, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0.960784, 0.960784, 1)
 theme_override_constants/outline_size = 10
 theme_override_constants/align_to_largest_stylebox = 1
-theme_override_fonts/font = ExtResource("2_d4luv")
+theme_override_fonts/font = ExtResource("3_p2xm5")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mubft")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mr4x7")
@@ -246,7 +246,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.960784, 0.960784, 1)
 theme_override_colors/font_outline_color = Color(0.266667, 0, 0, 1)
 theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("3_jw1bs")
+theme_override_fonts/font = ExtResource("4_grl24")
 theme_override_font_sizes/font_size = 56
 text = "YOU DIED"
 

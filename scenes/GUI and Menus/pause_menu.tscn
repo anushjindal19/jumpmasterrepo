@@ -107,8 +107,10 @@ script = ExtResource("1_1s2dm")
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_4hnlu")
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -433.0
+offset_top = -292.0
+offset_right = 1760.0
+offset_bottom = 980.0
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -158,10 +160,10 @@ text = "Quit"
 [node name="GamePaused" type="Label" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = 291.0
-offset_top = 179.0
-offset_right = 861.0
-offset_bottom = 211.0
+offset_left = 355.0
+offset_top = 240.0
+offset_right = 925.0
+offset_bottom = 272.0
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("3_knqa7")
 theme_override_font_sizes/font_size = 32
