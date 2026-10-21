@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const JUMP_VELOCITY = -300.0
 const GRAVITY = 900
-const WALL_JUMP_PUSHBACK = 200
+const WALL_JUMP_PUSHBACK = 100
 const WALL_JUMP_CONTROL_LOCK = 0.15  # Seconds after a wall jump where input can't override the push
 const WALL_SLIDE_GRAVITY = 50
 var wall_jump_timer = 0.0
