@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-var last_direction = Vector2.ZERO
 const JUMP_VELOCITY = -300.0
 const GRAVITY = 900
 const WALL_JUMP_PUSHBACK = 200
@@ -81,7 +80,6 @@ func _physics_process(delta):
 	else:
 		is_double_jumping = false  # Reset when landing
 		if input != Vector2.ZERO:
-			last_direction = input
 			play_movement_animation(input)
 		else:
 			play_idle_animation()
@@ -98,7 +96,7 @@ func play_movement_animation(input):
 		anim.play("run")
 
 func play_idle_animation():
-	if last_direction.x != 0 and anim.animation != "damagetaken":
+	if anim.animation != "damagetaken":
 		anim.play("idle")
 		
 func _ready():
