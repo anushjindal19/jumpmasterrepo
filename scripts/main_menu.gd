@@ -5,6 +5,7 @@ func _ready():
 	animation_player.play("idle")
 
 func _on_start_game_pressed() -> void:
+	PlayerUtils.current_level = 1
 	PlayerUtils.reload_current_level()
 
 

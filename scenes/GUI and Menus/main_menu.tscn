@@ -112,6 +112,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
 text = "Start New Game"
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(250, 40)
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
@@ -129,6 +130,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
 text = "Continue"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(250, 40)
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
