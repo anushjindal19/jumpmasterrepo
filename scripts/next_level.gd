@@ -1,9 +1,16 @@
 extends Control
 @onready var label: AnimationPlayer = $"YouBeatIt!/AnimationPlayer"
 
+@onready var next_level_button: Button = $"PanelContainer/VBoxContainer/next level"
+
 func _ready() -> void:
+	# After the last level there's nowhere to go, so this becomes the end-of-game screen
+	if PlayerUtils.is_last_level():
+		$"YouBeatIt!".text = "GAME COMPLETE!"
+		next_level_button.hide()
 	label.play("idle")
 	await label.animation_finished
+	$"YouBeatIt!".visible_characters = -1  # The typing animation stops at 13 characters
 	label.play("bounce")
 
 func _on_next_level_pressed() -> void:

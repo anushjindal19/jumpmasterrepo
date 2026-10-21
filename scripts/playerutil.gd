@@ -1,9 +1,16 @@
 # res://scripts/player_utils.gd
 extends Node
 
+const LAST_LEVEL := 3
+
 var current_level := 1
 
+func is_last_level() -> bool:
+	return current_level >= LAST_LEVEL
+
 func load_next_level():
+	if is_last_level():
+		return
 	current_level += 1
 	var scene_path = "res://scenes/level_%d.tscn" % current_level
 	get_tree().change_scene_to_file(scene_path)
