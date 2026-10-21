@@ -6,14 +6,48 @@
 [ext_resource type="Script" uid="uid://xp6qny7um22" path="res://scripts/killzone.gd" id="4_sx8yt"]
 [ext_resource type="PackedScene" uid="uid://4p8p4vvd0jrq" path="res://scenes/damagers/avoidable_log.tscn" id="6_ax3dk"]
 [ext_resource type="PackedScene" uid="uid://bryu8qq61wj63" path="res://scenes/first_checkpoint.tscn" id="9_vv2vh"]
-[ext_resource type="PackedScene" uid="uid://dh1vl4edgunih" path="res://scenes/end_checkpoint.tscn" id="19_endcp"]
 [ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="12_1rxxv"]
 [ext_resource type="PackedScene" uid="uid://dnd0pnxrbwcg" path="res://scenes/GUI and Menus/pause_menu.tscn" id="14_detxl"]
 [ext_resource type="PackedScene" uid="uid://dl3os3mfiypg" path="res://scenes/player.tscn" id="15_58p72"]
 [ext_resource type="Script" uid="uid://d0d1fuyqu6mro" path="res://scripts/label.gd" id="16_365g5"]
 [ext_resource type="PackedScene" uid="uid://do1ysug68wwf" path="res://scenes/GUI and Menus/life_container.tscn" id="17_50287"]
 [ext_resource type="AudioStream" uid="uid://cliq2xueabko8" path="res://assets/sounds/retro-game-arcade-236133.mp3" id="18_os8re"]
+[ext_resource type="PackedScene" uid="uid://dh1vl4edgunih" path="res://scenes/end_checkpoint.tscn" id="19_endcp"]
 [ext_resource type="PackedScene" path="res://scenes/sky_background.tscn" id="99_sky"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7ucq"]
+texture = ExtResource("3_wa6ex")
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+2:0/size_in_atlas = Vector2i(3, 1)
+2:0/0 = 0
+0:1/size_in_atlas = Vector2i(3, 1)
+0:1/0 = 0
+1:2/size_in_atlas = Vector2i(4, 1)
+1:2/0 = 0
+0:3/size_in_atlas = Vector2i(3, 1)
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xwfau"]
+sources/0 = SubResource("TileSetAtlasSource_u7ucq")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kvpfn"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -191,40 +225,6 @@ texture = ExtResource("2_q7pjq")
 physics_layer_0/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_gee14")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7ucq"]
-texture = ExtResource("3_wa6ex")
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-2:0/size_in_atlas = Vector2i(3, 1)
-2:0/0 = 0
-0:1/size_in_atlas = Vector2i(3, 1)
-0:1/0 = 0
-1:2/size_in_atlas = Vector2i(4, 1)
-1:2/0 = 0
-0:3/size_in_atlas = Vector2i(3, 1)
-0:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_xwfau"]
-sources/0 = SubResource("TileSetAtlasSource_u7ucq")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 distance = -64.0
