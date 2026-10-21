@@ -10,7 +10,7 @@ func _on_body_entered(_body):
 		return
 	else:
 		has_interacted = true
-		score_label.add_point_apple()
+		score_label.add_point_banana()
 		anim.play("collected")
 		await anim.animation_finished
 		queue_free()

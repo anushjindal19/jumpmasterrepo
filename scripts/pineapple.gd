@@ -10,7 +10,7 @@ func _on_body_entered(_body):
 		return
 	else:
 		has_interacted = true
-		score_label.add_point_apple()
+		score_label.add_point_pineapple()
 		audio_stream_player_2d.play()
 		anim.play("collected")
 		await anim.animation_finished
