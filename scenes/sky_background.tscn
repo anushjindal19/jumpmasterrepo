@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://cux84adf3c6qt" path="res://assets/sprites/sky_gradient.png" id="1_sky"]
+
+[node name="sky" type="Node2D"]
+scale = Vector2(1.02179, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(-9296, -704)
+texture = ExtResource("1_sky")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 24864, 1632)
