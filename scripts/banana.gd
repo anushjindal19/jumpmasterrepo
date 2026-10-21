@@ -5,8 +5,8 @@ extends Area2D
 
 var has_interacted = false
 
-func _on_body_entered(_body):
-	if has_interacted:
+func _on_body_entered(body):
+	if has_interacted or not body.is_in_group("player"):
 		return
 	else:
 		has_interacted = true
