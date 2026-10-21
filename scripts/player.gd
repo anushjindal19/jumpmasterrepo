@@ -5,8 +5,10 @@ extends CharacterBody2D
 var last_direction = Vector2.ZERO
 const JUMP_VELOCITY = -300.0
 const GRAVITY = 900
-const WALL_JUMP_PUSHBACK = 1000
+const WALL_JUMP_PUSHBACK = 200
+const WALL_JUMP_CONTROL_LOCK = 0.15  # Seconds after a wall jump where input can't override the push
 const WALL_SLIDE_GRAVITY = 50
+var wall_jump_timer = 0.0
 var is_wall_sliding = false
 var can_jump = true
 var can_double_jump = true
@@ -23,15 +25,10 @@ func _physics_process(delta):
 	# Handle jump and double jump
 	if Input.is_action_just_pressed("jump") and can_jump:
 		$AudioStreamPlayer2D.play()
-		if is_on_wall() and Input.is_action_pressed("right"):
+		if is_on_wall() and not is_on_floor():  # Wall jump, pushed away from the wall
 			velocity.y = JUMP_VELOCITY
-			velocity.x = -WALL_JUMP_PUSHBACK
-			anim.play("jump")
-			can_double_jump = true
-			is_double_jumping = false
-		elif is_on_wall() and Input.is_action_pressed("left"):
-			velocity.y = JUMP_VELOCITY
-			velocity.x = WALL_JUMP_PUSHBACK
+			velocity.x = get_wall_normal().x * WALL_JUMP_PUSHBACK
+			wall_jump_timer = WALL_JUMP_CONTROL_LOCK
 			anim.play("jump")
 			can_double_jump = true
 			is_double_jumping = false
@@ -61,8 +58,11 @@ func _physics_process(delta):
 	input.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input = input.normalized()
 
-	# Preserve vertical velocity
-	velocity.x = input.x * 100
+	# Don't let input overwrite the wall jump push until the lock runs out
+	if wall_jump_timer > 0:
+		wall_jump_timer -= delta
+	else:
+		velocity.x = input.x * 100
 
 	move_and_slide()
 
