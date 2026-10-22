@@ -1,0 +1,184 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" uid="uid://bwpxdfbhmowdb" path="res://scripts/shop_menu.gd" id="1_shop"]
+[ext_resource type="Texture2D" uid="uid://dhe36ak82fh1b" path="res://assets/sprites/sIBk3JQtfYle-XfBf5_6TnFyVkRZ8tR_3a_wi1inOyU.webp" id="2_bg"]
+[ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+bg_color = Color(0.878431, 0.878431, 0.878431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(0.815686, 0.921569, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.647059, 0.847059, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_disabled"]
+bg_color = Color(0.878431, 0.878431, 0.878431, 0.35)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.0784314, 0.0941176, 0.141176, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.815686, 0.921569, 1, 0.35)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Theme" id="Theme_shop"]
+default_font = ExtResource("3_font")
+default_font_size = 16
+Button/colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
+Button/colors/font_disabled_color = Color(0.180392, 0.180392, 0.180392, 0.6)
+Button/colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
+Button/colors/font_hover_color = Color(0.180392, 0.180392, 0.180392, 1)
+Button/colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+Button/colors/font_outline_color = Color(0.8, 0.8, 0.8, 1)
+Button/colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+Button/constants/outline_size = 2
+Button/styles/disabled = SubResource("StyleBoxFlat_disabled")
+Button/styles/hover = SubResource("StyleBoxFlat_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_normal")
+Button/styles/pressed = SubResource("StyleBoxFlat_pressed")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_card")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bg"]
+texture = ExtResource("2_bg")
+modulate_color = Color(0.435294, 0.498039, 0.501961, 1)
+
+[node name="shop_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_shop")
+script = ExtResource("1_shop")
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bg")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 40.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.768627, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "SHOP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 120.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 20
+text = "Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -150.0
+offset_right = 490.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Template" type="PanelContainer" parent="Cards"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBox" type="VBoxContainer" parent="Cards/Template"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Name" type="Label" parent="Cards/Template/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Skin Name"
+horizontal_alignment = 1
+
+[node name="Preview" type="Control" parent="Cards/Template/VBox"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Cards/Template/VBox/Preview"]
+position = Vector2(94, 64)
+scale = Vector2(4, 4)
+
+[node name="Price" type="Label" parent="Cards/Template/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 14
+text = "0 pts"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Cards/Template/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Buy"
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -100.0
+offset_right = 125.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

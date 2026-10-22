@@ -98,10 +98,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -79.0
-offset_top = -42.0
-offset_right = 79.0
-offset_bottom = 42.0
+offset_left = -125.0
+offset_top = -66.0
+offset_right = 125.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
@@ -122,6 +122,23 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
 text = "Start New Game"
+
+[node name="Shop" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_pga4x")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+text = "Shop"
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 visible = false
@@ -205,6 +222,7 @@ libraries = {
 autoplay = "typing"
 
 [connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
