@@ -17,8 +17,8 @@
 [ext_resource type="Script" uid="uid://d0d1fuyqu6mro" path="res://scripts/label.gd" id="15_hnsmf"]
 [ext_resource type="PackedScene" uid="uid://do1ysug68wwf" path="res://scenes/GUI and Menus/life_container.tscn" id="16_nossa"]
 [ext_resource type="AudioStream" uid="uid://cliq2xueabko8" path="res://assets/sounds/retro-game-arcade-236133.mp3" id="17_hjqri"]
-[ext_resource type="PackedScene" path="res://scenes/sky_background.tscn" id="99_sky"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/mushroom.tscn" id="98_mushroom"]
+[ext_resource type="PackedScene" path="res://scenes/sky_background.tscn" id="99_sky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7ucq"]
 texture = ExtResource("3_2cbcq")
