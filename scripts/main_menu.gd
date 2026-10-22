@@ -2,10 +2,12 @@ extends Control
 @onready var animation_player: AnimationPlayer = $Label/AnimationPlayer
 
 func _ready():
-	animation_player.play("idle")
 	# Quitting does nothing useful in a browser tab
 	if OS.has_feature("web"):
 		$VBoxContainer/Exit.hide()
+	animation_player.play("typing")
+	await animation_player.animation_finished
+	animation_player.play("idle")
 
 func _on_start_game_pressed() -> void:
 	PlayerUtils.current_level = 1
