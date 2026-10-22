@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://ybu4gg7wsxie"]
 
-[ext_resource type="Script" uid="uid://1odr83d41uhd" path="res://scripts/strawberry.gd" id="1_4n2po"]
+[ext_resource type="Script" uid="uid://beqrktfk58lfp" path="res://scripts/fruit.gd" id="1_4n2po"]
 [ext_resource type="Texture2D" uid="uid://pte2fhxqfc6k" path="res://assets/sprites/assetpack/Items/Fruits/Collected.png" id="1_fbxwq"]
 [ext_resource type="Texture2D" uid="uid://cithx4ufmgkiw" path="res://assets/sprites/assetpack/Items/Fruits/Strawberry.png" id="2_4n2po"]
 
@@ -184,6 +184,7 @@ height = 16.0
 
 [node name="strawberry" type="Area2D"]
 script = ExtResource("1_4n2po")
+points = 500
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2l30s")

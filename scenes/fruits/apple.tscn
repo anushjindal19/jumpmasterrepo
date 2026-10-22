@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://de8ipfk2kp57q"]
 
 [ext_resource type="Texture2D" uid="uid://pte2fhxqfc6k" path="res://assets/sprites/assetpack/Items/Fruits/Collected.png" id="1_s6jqi"]
-[ext_resource type="Script" uid="uid://do0meu0x3cexx" path="res://scripts/apple.gd" id="1_trdmo"]
+[ext_resource type="Script" uid="uid://beqrktfk58lfp" path="res://scripts/fruit.gd" id="1_trdmo"]
 [ext_resource type="Texture2D" uid="uid://dfh3gmy06cdbr" path="res://assets/sprites/assetpack/Items/Fruits/Apple.png" id="2_ov8bs"]
 [ext_resource type="AudioStream" uid="uid://r6a6wf2d526j" path="res://assets/sounds/apple-bite-316785.mp3" id="4_7hfkm"]
 
@@ -184,6 +184,7 @@ radius = 7.0
 
 [node name="apple" type="Area2D"]
 script = ExtResource("1_trdmo")
+points = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fv5sv")

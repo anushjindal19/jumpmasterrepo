@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://dh3a71g628qm6"]
 
-[ext_resource type="Script" uid="uid://be2t24uxi0myw" path="res://scripts/pineapple.gd" id="1_0e4s3"]
+[ext_resource type="Script" uid="uid://beqrktfk58lfp" path="res://scripts/fruit.gd" id="1_0e4s3"]
 [ext_resource type="Texture2D" uid="uid://pte2fhxqfc6k" path="res://assets/sprites/assetpack/Items/Fruits/Collected.png" id="1_dakpr"]
 [ext_resource type="Texture2D" uid="uid://cip7vjrgwcgxl" path="res://assets/sprites/assetpack/Items/Fruits/Pineapple.png" id="2_0e4s3"]
 [ext_resource type="AudioStream" uid="uid://dhjedx720dg6d" path="res://assets/sounds/tsamp3_pineapple_lump-97007-[AudioTrimmer.com].mp3" id="4_0nmcs"]
@@ -186,6 +186,7 @@ height = 16.0
 [node name="pineapple" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_0e4s3")
+points = 300
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fo53l")

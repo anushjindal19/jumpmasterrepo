@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://bsp1u51etp7jr"]
 
 [ext_resource type="Texture2D" uid="uid://pte2fhxqfc6k" path="res://assets/sprites/assetpack/Items/Fruits/Collected.png" id="1_ghwtm"]
-[ext_resource type="Script" uid="uid://baftcx50b77e3" path="res://scripts/cherry.gd" id="1_v261v"]
+[ext_resource type="Script" uid="uid://beqrktfk58lfp" path="res://scripts/fruit.gd" id="1_v261v"]
 [ext_resource type="Texture2D" uid="uid://d158hr7yerhv5" path="res://assets/sprites/assetpack/Items/Fruits/Cherries.png" id="2_v261v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_inxd4"]
@@ -183,6 +183,7 @@ radius = 8.06226
 
 [node name="cherry" type="Area2D"]
 script = ExtResource("1_v261v")
+points = 800
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_64bwp")

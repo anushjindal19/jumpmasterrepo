@@ -4,8 +4,11 @@ extends Node
 const LAST_LEVEL := 3
 const SAVE_PATH := "user://save.cfg"
 
+signal score_changed(score: int)
+
 var current_level := 1
 var level_time := 0.0  # Seconds spent in the current level, counted by level_1.gd
+var score := 0  # Fruit points collected in the current level
 
 # Results of the level that was just finished, shown on the next_level screen
 var last_score := 0
@@ -18,8 +21,18 @@ var is_new_best_time := false
 func is_last_level() -> bool:
 	return current_level >= LAST_LEVEL
 
+func add_score(points: int) -> void:
+	score += points
+	score_changed.emit(score)
+
+# Called by level_1.gd when a level (re)starts
+func start_level() -> void:
+	level_time = 0.0
+	score = 0
+	score_changed.emit(score)
+
 # Records the run and updates the saved best score and time for this level
-func finish_level(score: int) -> void:
+func finish_level() -> void:
 	last_score = score
 	last_time = level_time
 	var save := ConfigFile.new()
