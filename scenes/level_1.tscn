@@ -627,6 +627,13 @@ patrol_distance = 24.0
 position = Vector2(3801, -160)
 patrol_distance = 26.0
 
+[node name="CameraFloor" type="Line2D" parent="." groups=["camera_floor"]]
+editor_description = "Bottom edge of the camera view along the level (scripts/player_camera.gd). Drag the points to change it. The camera zooms out when the player stands too high above it, and only goes below it when the player falls. Hidden while playing."
+z_index = 20
+points = PackedVector2Array(-374, 56, 221, 56, 319, 24, 417, -8, 515, -40, 907, -40, 1005, -72, 1104, -72, 1594, 8, 1692, 24, 1986, 24, 2281, -88, 2379, -72, 2575, -72, 2673, -56, 2967, -56, 3065, -72, 3163, -56, 3654, -56, 3752, -88, 3948, -88, 4046, -152, 4341, -152, 4439, -200, 5425, -200)
+width = 2.0
+default_color = Color(1, 0.25, 0.25, 0.8)
+
 [node name="HUD" parent="." instance=ExtResource("15_hnsmf")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

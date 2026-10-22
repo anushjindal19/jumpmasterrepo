@@ -292,6 +292,13 @@ position = Vector2(760, 13)
 
 [node name="damager (avoidable)" type="Node" parent="."]
 
+[node name="CameraFloor" type="Line2D" parent="." groups=["camera_floor"]]
+editor_description = "Bottom edge of the camera view along the level (scripts/player_camera.gd). Drag the points to change it. The camera zooms out when the player stands too high above it, and only goes below it when the player falls. Hidden while playing."
+z_index = 20
+points = PackedVector2Array(-357, 40, 335, 40, 433, 8, 728, 40, 1224, 40)
+width = 2.0
+default_color = Color(1, 0.25, 0.25, 0.8)
+
 [node name="HUD" parent="." instance=ExtResource("16_365g5")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
