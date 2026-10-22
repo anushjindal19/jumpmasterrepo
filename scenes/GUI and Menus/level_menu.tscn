@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" uid="uid://duoijx68hs8gs" path="res://scripts/level_menu.gd" id="1_levels"]
+[ext_resource type="Texture2D" uid="uid://dhe36ak82fh1b" path="res://assets/sprites/sIBk3JQtfYle-XfBf5_6TnFyVkRZ8tR_3a_wi1inOyU.webp" id="2_bg"]
+[ext_resource type="Theme" path="res://assets/menu_theme.tres" id="3_theme"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bg"]
+texture = ExtResource("2_bg")
+modulate_color = Color(0.435294, 0.498039, 0.501961, 1)
+
+[node name="level_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_theme")
+script = ExtResource("1_levels")
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bg")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 40.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.768627, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "LEVELS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -170.0
+offset_right = 490.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Template" type="PanelContainer" parent="Cards"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBox" type="VBoxContainer" parent="Cards/Template"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="Cards/Template/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="Cards/Template/VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_constants/line_spacing = 8
+theme_override_font_sizes/font_size = 14
+text = "Best: 0
+Time: 0:00.0
+Fruit: 0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Cards/Template/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Play"
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -100.0
+offset_right = 125.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
