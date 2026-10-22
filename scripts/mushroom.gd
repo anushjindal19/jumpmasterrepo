@@ -42,6 +42,8 @@ func stomp(player):
 	player.can_double_jump = true
 	player.is_double_jumping = false
 	set_deferred("monitoring", false)
+	PlayerUtils.shake_camera(player, 2.0, 0.15)
+	PlayerUtils.spawn_burst(self, global_position, Color.WHITE)
 	anim.play("hit")
 	await anim.animation_finished
 	queue_free()

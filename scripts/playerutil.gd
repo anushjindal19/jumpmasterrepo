@@ -35,6 +35,41 @@ func finish_level(score: int) -> void:
 	save.set_value(section, "best_time", best_time)
 	save.save(SAVE_PATH)
 
+# Jiggles the player's camera for a moment. Runs in real time so the damage slow-mo doesn't stretch it
+func shake_camera(player_ref: Node, strength: float, duration := 0.3) -> void:
+	var cam: Camera2D = player_ref.get_node_or_null("Camera2D")
+	if not cam:
+		return
+	var tween := cam.create_tween().set_ignore_time_scale(true)
+	var steps := 6
+	for i in steps:
+		var fade := 1.0 - float(i) / steps
+		var shake := Vector2(randf_range(-1, 1), randf_range(-1, 1)) * strength * fade
+		tween.tween_property(cam, "offset", shake, duration / steps)
+	tween.tween_property(cam, "offset", Vector2.ZERO, duration / steps)
+
+# One-off burst of square pixels, added next to `near` so it stays put in the level
+func spawn_burst(near: Node, at: Vector2, color: Color) -> void:
+	var p := CPUParticles2D.new()
+	p.one_shot = true
+	p.emitting = false
+	p.amount = 14
+	p.lifetime = 0.5
+	p.explosiveness = 1.0
+	p.direction = Vector2.UP
+	p.spread = 180.0
+	p.initial_velocity_min = 60.0
+	p.initial_velocity_max = 120.0
+	p.gravity = Vector2(0, 300)
+	p.scale_amount_min = 1.5
+	p.scale_amount_max = 2.5
+	p.color = color
+	p.z_index = 6
+	near.get_parent().add_child(p)
+	p.global_position = at
+	p.finished.connect(p.queue_free)
+	p.emitting = true
+
 func format_time(seconds: float) -> String:
 	return "%d:%04.1f" % [floori(seconds / 60.0), fmod(seconds, 60.0)]
 
@@ -60,6 +95,8 @@ func damage_player(
 	if player_ref.get("already_damaged"):
 		return
 	player_ref.set("already_damaged", true)
+	shake_camera(player_ref, 4.0)
+	spawn_burst(player_ref, player_ref.global_position, Color(1, 0.35, 0.35))
 	Engine.time_scale = 0.1
 	anim.speed_scale = 1.0 / Engine.time_scale
 	anim.play("damagetaken")
