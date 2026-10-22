@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var life_container: HBoxContainer = $CharacterBody2D/Camera2D/lifeContainer
+@onready var life_container: HBoxContainer = $HUD/lifeContainer
 
 
 func _ready() -> void:

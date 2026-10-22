@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://2er0rtquj70u" path="res://scripts/life_container.gd" id="1_6dabh"]
 
-[node name="lifeContainer" type="HBoxContainer"]
+[node name="lifeContainer" type="HBoxContainer" groups=["lives"]]
 layout_direction = 2
 offset_right = 132.0
 offset_bottom = 40.0
-theme_override_constants/separation = 45
+theme_override_constants/separation = 4
 script = ExtResource("1_6dabh")

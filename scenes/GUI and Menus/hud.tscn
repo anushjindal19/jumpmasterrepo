@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" uid="uid://d0d1fuyqu6mro" path="res://scripts/label.gd" id="1_score"]
+[ext_resource type="FontFile" uid="uid://bgvjhe6mkgk0e" path="res://assets/fonts/PixelOperator8.ttf" id="2_font"]
+[ext_resource type="PackedScene" uid="uid://do1ysug68wwf" path="res://scenes/GUI and Menus/life_container.tscn" id="3_lives"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 400.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+text = "0"
+vertical_alignment = 1
+script = ExtResource("1_score")
+
+[node name="lifeContainer" parent="." instance=ExtResource("3_lives")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -340.0
+offset_top = 20.0
+offset_right = -40.0
+offset_bottom = 76.0
+grow_horizontal = 0
+alignment = 2

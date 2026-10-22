@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://df14wt2umt57"]
+[gd_scene load_steps=26 format=4 uid="uid://df14wt2umt57"]
 
 [ext_resource type="Script" uid="uid://kjblc44iypet" path="res://scripts/level_1.gd" id="1_igmy8"]
 [ext_resource type="Texture2D" uid="uid://dmdjbqgf08sds" path="res://assets/sprites/assetpack/tileset/world_tileset.png" id="1_pbc48"]
@@ -12,11 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bsp1u51etp7jr" path="res://scenes/fruits/cherry.tscn" id="6_7qsfm"]
 [ext_resource type="PackedScene" uid="uid://ceky2ebtmebih" path="res://scenes/checkpoint.tscn" id="7_bv48q"]
 [ext_resource type="PackedScene" uid="uid://btd6o00l2v78u" path="res://scenes/fruits/banana.tscn" id="7_k22d5"]
-[ext_resource type="Script" uid="uid://d0d1fuyqu6mro" path="res://scripts/label.gd" id="7_que50"]
+[ext_resource type="PackedScene" path="res://scenes/GUI and Menus/hud.tscn" id="7_que50"]
 [ext_resource type="PackedScene" uid="uid://dh3a71g628qm6" path="res://scenes/fruits/pineapple.tscn" id="8_k6a82"]
 [ext_resource type="PackedScene" uid="uid://dh1vl4edgunih" path="res://scenes/end_checkpoint.tscn" id="8_k22d5"]
 [ext_resource type="PackedScene" uid="uid://bfjdy5lwiunxc" path="res://scenes/damagers/non_avoidable_log.tscn" id="11_1sb0y"]
-[ext_resource type="PackedScene" uid="uid://do1ysug68wwf" path="res://scenes/GUI and Menus/life_container.tscn" id="15_vhnap"]
 [ext_resource type="AudioStream" uid="uid://cliq2xueabko8" path="res://assets/sounds/retro-game-arcade-236133.mp3" id="16_vwfin"]
 [ext_resource type="PackedScene" path="res://scenes/sky_background.tscn" id="99_sky"]
 
@@ -455,6 +454,8 @@ scale = Vector2(0.575, 0.575)
 position = Vector2(1641, -73)
 scale = Vector2(0.575, 0.575)
 
+[node name="HUD" parent="." instance=ExtResource("7_que50")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_b4j7a")]
@@ -465,28 +466,7 @@ position = Vector2(-60, -52)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(2, 16)
-zoom = Vector2(2.4, 2.4)
-
-[node name="ScoreLabel" type="Label" parent="CharacterBody2D/Camera2D"]
-offset_left = -234.0
-offset_top = -130.0
-offset_right = -42.0
-offset_bottom = -114.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 1
-theme_override_fonts/font = ExtResource("6_6cvei")
-theme_override_font_sizes/font_size = 8
-text = "0"
-script = ExtResource("7_que50")
-
-[node name="lifeContainer" parent="CharacterBody2D/Camera2D" instance=ExtResource("15_vhnap")]
-layout_direction = 3
-offset_left = -365.0
-offset_top = -129.0
-offset_right = -139.0
-offset_bottom = -89.0
-scale = Vector2(0.35, 0.35)
+zoom = Vector2(3, 3)
 
 [node name="music" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 position = Vector2(2, 16)
