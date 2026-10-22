@@ -90,7 +90,7 @@ layout_mode = 2
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Cards/Template/VBox/Preview"]
 position = Vector2(94, 64)
-scale = Vector2(4, 4)
+scale = Vector2(1, 1)
 
 [node name="Price" type="Label" parent="Cards/Template/VBox"]
 layout_mode = 2

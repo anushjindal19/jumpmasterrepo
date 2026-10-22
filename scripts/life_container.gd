@@ -5,6 +5,7 @@ extends HBoxContainer
 func setMaxLifes(_max: int):
 	for i in range(_max):
 		var life = LifeGuiClass.instantiate()
+		life.texture = ShopData.life_icon()  # The equipped character's head
 		add_child(life)
 
 func reduce_life():

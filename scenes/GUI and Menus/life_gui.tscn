@@ -1,13 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp71ot6w7w22c"]
-
-[ext_resource type="Texture2D" uid="uid://bap26vnes0nxw" path="res://assets/sprites/assetpack/Main Characters/Ninja Frog/Idle (32x32).png" id="1_hd3jv"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_head"]
-atlas = ExtResource("1_hd3jv")
-region = Rect2(4, 8, 23, 24)
+[gd_scene format=3 uid="uid://cp71ot6w7w22c"]
 
 [node name="lifeGui" type="TextureRect"]
 custom_minimum_size = Vector2(56, 56)
-texture = SubResource("AtlasTexture_head")
-expand_mode = 1
 stretch_mode = 5

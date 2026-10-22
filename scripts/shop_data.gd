@@ -6,14 +6,14 @@ extends Node
 signal points_changed(points: int)
 
 const CHARACTERS_DIR := "res://assets/sprites/assetpack/Main Characters/"
-const DEFAULT_SKIN := "ninja_frog"
-# Every character in the Pixel Adventure pack has the same sprite sheets, so a skin is just a folder.
+const DEFAULT_SKIN := "briar"
+# "frames" is a SpriteFrames with the animations player.gd plays (128x128 frames, drawn at 1/3 scale).
+# "icon" is the part of the first idle frame shown as a life in the HUD.
 # The shop lists them in this order.
 const SKINS := {
-	"ninja_frog": {"name": "Ninja Frog", "folder": "Ninja Frog", "price": 0},
-	"pink_man": {"name": "Pink Man", "folder": "Pink Man", "price": 2000},
-	"mask_dude": {"name": "Mask Dude", "folder": "Mask Dude", "price": 4000},
-	"virtual_guy": {"name": "Virtual Guy", "folder": "Virtual Guy", "price": 6000},
+	"briar": {"name": "Briar", "frames": CHARACTERS_DIR + "Briar/briar_frames.tres", "icon": Rect2(34, 14, 56, 56), "price": 0},
+	"ferro": {"name": "Ferro", "frames": CHARACTERS_DIR + "Ferro/ferro_frames.tres", "icon": Rect2(34, 32, 56, 56), "price": 2000},
+	"wick": {"name": "Wick", "frames": CHARACTERS_DIR + "Wick/wick_frames.tres", "icon": Rect2(32, 30, 56, 56), "price": 4000},
 }
 
 var points := 0
@@ -28,10 +28,12 @@ func reset() -> void:
 	var save := ConfigFile.new()
 	save.load(PlayerUtils.SAVE_PATH)  # Fails on the first run, which keeps the defaults
 	points = save.get_value("shop", "points", 0)
-	owned_skins = save.get_value("shop", "owned_skins", [DEFAULT_SKIN])
+	# Skins that have been removed from SKINS are dropped, and the default is always owned
+	owned_skins = save.get_value("shop", "owned_skins", []).filter(func(s): return SKINS.has(s))
+	if not owns(DEFAULT_SKIN):
+		owned_skins.push_front(DEFAULT_SKIN)
 	selected_skin = save.get_value("shop", "selected_skin", DEFAULT_SKIN)
-	# A skin that's been removed from SKINS falls back to the default
-	if not SKINS.has(selected_skin) or not owns(selected_skin):
+	if not owns(selected_skin):
 		selected_skin = DEFAULT_SKIN
 
 func owns(skin_id: String) -> bool:
@@ -61,35 +63,15 @@ func select(skin_id: String) -> void:
 		selected_skin = skin_id
 		_save()
 
-# Returns a copy of the player's animations with every frame taken from the skin's sheets instead
-func skin_frames(base: SpriteFrames, skin_id := selected_skin) -> SpriteFrames:
-	if skin_id == DEFAULT_SKIN:
-		return base
-	var folder: String = CHARACTERS_DIR + SKINS[skin_id]["folder"] + "/"
-	var frames: SpriteFrames = base.duplicate()
-	for anim_name in frames.get_animation_names():
-		for i in frames.get_frame_count(anim_name):
-			var old: AtlasTexture = frames.get_frame_texture(anim_name, i)
-			var tex := AtlasTexture.new()
-			tex.atlas = load(folder + old.atlas.resource_path.get_file())
-			tex.region = old.region
-			frames.set_frame(anim_name, i, tex, frames.get_frame_duration(anim_name, i))
-	return frames
+func skin_frames(skin_id := selected_skin) -> SpriteFrames:
+	return load(SKINS[skin_id]["frames"])
 
-# Idle and run animations for the shop's preview of a skin
-func preview_frames(skin_id: String) -> SpriteFrames:
-	var folder: String = CHARACTERS_DIR + SKINS[skin_id]["folder"] + "/"
-	var frames := SpriteFrames.new()
-	for anim_name in ["idle", "run"]:
-		var sheet: Texture2D = load(folder + anim_name.capitalize() + " (32x32).png")
-		frames.add_animation(anim_name)
-		frames.set_animation_speed(anim_name, 12 if anim_name == "idle" else 16)  # Same as player.tscn
-		for x in range(0, sheet.get_width(), 32):
-			var tex := AtlasTexture.new()
-			tex.atlas = sheet
-			tex.region = Rect2(x, 0, 32, 32)
-			frames.add_frame(anim_name, tex)
-	return frames
+# The skin's head, for the lives in the HUD
+func life_icon(skin_id := selected_skin) -> AtlasTexture:
+	var icon := AtlasTexture.new()
+	icon.atlas = skin_frames(skin_id).get_frame_texture("idle", 0).atlas
+	icon.region = SKINS[skin_id]["icon"]
+	return icon
 
 func _save() -> void:
 	var save := ConfigFile.new()

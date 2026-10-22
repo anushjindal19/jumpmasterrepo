@@ -15,7 +15,7 @@ func _ready():
 		$Cards.add_child(card)
 		cards[skin_id] = card
 		card.get_node("VBox/Name").text = ShopData.SKINS[skin_id]["name"]
-		card.get_node("VBox/Preview/Sprite").sprite_frames = ShopData.preview_frames(skin_id)
+		card.get_node("VBox/Preview/Sprite").sprite_frames = ShopData.skin_frames(skin_id)
 		card.get_node("VBox/Button").pressed.connect(_on_card_button_pressed.bind(skin_id))
 	refresh()
 
