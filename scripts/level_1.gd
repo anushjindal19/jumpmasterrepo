@@ -5,7 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	life_container.setMaxLifes(3)
-	PlayerUtils.start_level()
+	PlayerUtils.start_level(self)
 
 
 func _process(delta):

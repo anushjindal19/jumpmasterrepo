@@ -31,7 +31,7 @@ NEW BEST SCORE!"
 		text += "
 NEW BEST TIME!"
 	text += "
-+%d shop points (%d to spend)" % [PlayerUtils.last_score, ShopData.points]
++%d shop points (%d to spend)" % [PlayerUtils.last_new_points, ShopData.points]
 	$Stats.text = text
 
 func _on_next_level_pressed() -> void:

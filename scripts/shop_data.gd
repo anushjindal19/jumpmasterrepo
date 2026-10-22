@@ -21,6 +21,10 @@ var owned_skins: Array = [DEFAULT_SKIN]
 var selected_skin := DEFAULT_SKIN
 
 func _ready():
+	reset()
+
+# Reads the shop state from the save file. Called again after the save is erased
+func reset() -> void:
 	var save := ConfigFile.new()
 	save.load(PlayerUtils.SAVE_PATH)  # Fails on the first run, which keeps the defaults
 	points = save.get_value("shop", "points", 0)
