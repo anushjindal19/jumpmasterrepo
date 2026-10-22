@@ -95,6 +95,7 @@ func play_idle_animation():
 		
 func _ready():
 	add_to_group("player")
+	anim.sprite_frames = ShopData.skin_frames(anim.sprite_frames)  # Wear the skin picked in the shop
 
 func wall_slide(delta):
 	if is_on_wall() and !is_on_floor():
