@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://df14wt2umt57"]
+[gd_scene load_steps=27 format=4 uid="uid://df14wt2umt57"]
 
 [ext_resource type="Script" uid="uid://kjblc44iypet" path="res://scripts/level_1.gd" id="1_igmy8"]
 [ext_resource type="Texture2D" uid="uid://dmdjbqgf08sds" path="res://assets/sprites/assetpack/tileset/world_tileset.png" id="1_pbc48"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bfjdy5lwiunxc" path="res://scenes/damagers/non_avoidable_log.tscn" id="11_1sb0y"]
 [ext_resource type="AudioStream" uid="uid://cliq2xueabko8" path="res://assets/sounds/retro-game-arcade-236133.mp3" id="16_vwfin"]
 [ext_resource type="PackedScene" path="res://scenes/sky_background.tscn" id="99_sky"]
+[ext_resource type="Script" uid="uid://c0bfm57rmk3tx" path="res://scripts/player_camera.gd" id="98_camera"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7ucq"]
 texture = ExtResource("3_wdtqu")
@@ -465,8 +466,9 @@ unique_name_in_owner = true
 position = Vector2(-60, -52)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(2, 16)
-zoom = Vector2(3, 3)
+position = Vector2(0, -20)
+zoom = Vector2(4, 4)
+script = ExtResource("98_camera")
 
 [node name="music" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 position = Vector2(2, 16)

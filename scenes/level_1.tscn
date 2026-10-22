@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cygnx45welmuj"]
+[gd_scene load_steps=33 format=4 uid="uid://cygnx45welmuj"]
 
 [ext_resource type="Script" uid="uid://kjblc44iypet" path="res://scripts/level_1.gd" id="1_1s4pk"]
 [ext_resource type="Texture2D" uid="uid://dmdjbqgf08sds" path="res://assets/sprites/assetpack/tileset/world_tileset.png" id="2_x2xxo"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://cliq2xueabko8" path="res://assets/sounds/retro-game-arcade-236133.mp3" id="17_hjqri"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/mushroom.tscn" id="98_mushroom"]
 [ext_resource type="PackedScene" path="res://scenes/sky_background.tscn" id="99_sky"]
+[ext_resource type="Script" uid="uid://c0bfm57rmk3tx" path="res://scripts/player_camera.gd" id="98_camera"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7ucq"]
 texture = ExtResource("3_2cbcq")
@@ -553,10 +554,10 @@ position = Vector2(2290, -95)
 [node name="text" type="Node" parent="."]
 
 [node name="movement help" type="Label" parent="text"]
-offset_left = -238.0
-offset_top = -20.0
-offset_right = -79.0
-offset_bottom = -1.0
+offset_left = -160.0
+offset_top = -84.0
+offset_right = -1.0
+offset_bottom = -65.0
 theme_override_colors/font_color = Color(0.94902, 0.941176, 0.937255, 1)
 theme_override_fonts/font = ExtResource("12_k8ld0")
 theme_override_font_sizes/font_size = 8
@@ -637,8 +638,9 @@ unique_name_in_owner = true
 position = Vector2(-36, -55)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(2, 16)
-zoom = Vector2(3, 3)
+position = Vector2(0, -20)
+zoom = Vector2(4, 4)
+script = ExtResource("98_camera")
 
 [node name="music" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 position = Vector2(2, 16)
