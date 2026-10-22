@@ -2,11 +2,41 @@
 extends Node
 
 const LAST_LEVEL := 3
+const SAVE_PATH := "user://save.cfg"
 
 var current_level := 1
+var level_time := 0.0  # Seconds spent in the current level, counted by level_1.gd
+
+# Results of the level that was just finished, shown on the next_level screen
+var last_score := 0
+var last_time := 0.0
+var best_score := 0
+var best_time := 0.0
+var is_new_best_score := false
+var is_new_best_time := false
 
 func is_last_level() -> bool:
 	return current_level >= LAST_LEVEL
+
+# Records the run and updates the saved best score and time for this level
+func finish_level(score: int) -> void:
+	last_score = score
+	last_time = level_time
+	var save := ConfigFile.new()
+	save.load(SAVE_PATH)  # Fails on the first run, which just leaves it empty
+	var section := "level_%d" % current_level
+	var old_best_score: int = save.get_value(section, "best_score", -1)
+	var old_best_time: float = save.get_value(section, "best_time", INF)
+	is_new_best_score = score > old_best_score
+	is_new_best_time = last_time < old_best_time
+	best_score = score if is_new_best_score else old_best_score
+	best_time = last_time if is_new_best_time else old_best_time
+	save.set_value(section, "best_score", best_score)
+	save.set_value(section, "best_time", best_time)
+	save.save(SAVE_PATH)
+
+func format_time(seconds: float) -> String:
+	return "%d:%04.1f" % [floori(seconds / 60.0), fmod(seconds, 60.0)]
 
 func load_next_level():
 	if is_last_level():

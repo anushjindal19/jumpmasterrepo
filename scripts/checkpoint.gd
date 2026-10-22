@@ -21,6 +21,11 @@ func _on_body_entered(body):
 		if is_starting_checkpoint:
 			anim_sprite.play("interacted")
 		elif is_ending_checkpoint:
+			if checkpoint_activated:
+				return
+			checkpoint_activated = true
+			var score_label = get_tree().get_first_node_in_group("scorelabel")
+			PlayerUtils.finish_level(score_label.score if score_label else 0)
 			anim_sprite.play("interacted")
 			var tree = get_tree()
 			await anim_sprite.animation_looped

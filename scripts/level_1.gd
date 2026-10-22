@@ -5,8 +5,9 @@ extends Node2D
 
 func _ready() -> void:
 	life_container.setMaxLifes(3)
+	PlayerUtils.level_time = 0.0
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func _process(delta):
+	# Stops while paused. Divide out the damage slow-mo so the timer counts real seconds
+	PlayerUtils.level_time += delta / Engine.time_scale

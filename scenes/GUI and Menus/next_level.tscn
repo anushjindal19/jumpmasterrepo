@@ -159,6 +159,26 @@ libraries = {
 &"": SubResource("AnimationLibrary_pv6yg")
 }
 
+[node name="Stats" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.82
+anchor_right = 0.5
+anchor_bottom = 0.82
+offset_left = -576.0
+offset_top = -60.0
+offset_right = 576.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 8
+theme_override_fonts/font = ExtResource("3_merhv")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/next level" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/main menu" to="." method="_on_main_menu_pressed"]

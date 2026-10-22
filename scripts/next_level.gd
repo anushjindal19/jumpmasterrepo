@@ -10,10 +10,27 @@ func _ready() -> void:
 	if PlayerUtils.is_last_level():
 		$"YouBeatIt!".text = "GAME COMPLETE!"
 		next_level_button.hide()
+	show_stats()
 	label.play("idle")
 	await label.animation_finished
 	$"YouBeatIt!".visible_characters = -1  # The typing animation stops at 13 characters
 	label.play("bounce")
+
+func show_stats() -> void:
+	var text := "Score: %d   Best: %d
+Time: %s   Best: %s" % [
+		PlayerUtils.last_score, PlayerUtils.best_score,
+		PlayerUtils.format_time(PlayerUtils.last_time), PlayerUtils.format_time(PlayerUtils.best_time)]
+	if PlayerUtils.is_new_best_score and PlayerUtils.is_new_best_time:
+		text += "
+NEW BEST SCORE AND TIME!"
+	elif PlayerUtils.is_new_best_score:
+		text += "
+NEW BEST SCORE!"
+	elif PlayerUtils.is_new_best_time:
+		text += "
+NEW BEST TIME!"
+	$Stats.text = text
 
 func _on_next_level_pressed() -> void:
 	PlayerUtils.load_next_level()
