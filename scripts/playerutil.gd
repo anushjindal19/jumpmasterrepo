@@ -47,6 +47,7 @@ func finish_level() -> void:
 	save.set_value(section, "best_score", best_score)
 	save.set_value(section, "best_time", best_time)
 	save.save(SAVE_PATH)
+	ShopData.add_points(score)  # Points from finished levels are spent in the shop
 
 # Jiggles the player's camera for a moment. Runs in real time so the damage slow-mo doesn't stretch it
 func shake_camera(player_ref: Node, strength: float, duration := 0.3) -> void:

@@ -22,6 +22,7 @@ buses/default_bus_layout=""
 [autoload]
 
 PlayerUtils="*res://scripts/playerutil.gd"
+ShopData="*res://scripts/shop_data.gd"
 
 [display]
 
