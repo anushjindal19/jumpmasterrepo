@@ -1,0 +1,37 @@
+# Exports the Web build and uploads it to itch.io with butler.
+# Runs when a version tag like v1.2.0 is pushed, or by hand from the Actions tab.
+# Needs a BUTLER_API_KEY secret and an ITCH_TARGET variable ("username/game-slug") in the repo settings.
+name: Release to itch.io
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+env:
+  GODOT_VERSION: "4.4"
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.4
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Move export templates to where Godot looks for them
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/ ~/.config/
+          mv /root/.config/godot ~/.config/godot
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+
+      - name: Export Web build
+        run: |
+          godot --headless --import
+          mkdir -v -p build/web
+          godot --headless --export-release "Web" build/web/index.html
+
+      - name: Upload to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: butler push build/web "${{ vars.ITCH_TARGET }}:html5" --userversion "${GITHUB_REF_NAME}"
