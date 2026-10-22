@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://brp15mgmffw6j" path="res://scripts/main_menu.gd" id="1_bl6hq"]
 [ext_resource type="Texture2D" uid="uid://dhe36ak82fh1b" path="res://assets/sprites/sIBk3JQtfYle-XfBf5_6TnFyVkRZ8tR_3a_wi1inOyU.webp" id="2_doqf2"]
 [ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_pga4x"]
-[ext_resource type="Theme" path="res://assets/menu_theme.tres" id="3_theme"]
+[ext_resource type="Theme" uid="uid://yk5jeohauk7r" path="res://assets/menu_theme.tres" id="3_theme"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
 texture = ExtResource("2_doqf2")
