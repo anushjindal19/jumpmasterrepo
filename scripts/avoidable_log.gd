@@ -1,9 +1,5 @@
 extends StaticBody2D
 
-@export var checkpoint_position: Vector2
-@onready var character_body_2d: CharacterBody2D = $"../../CharacterBody2D"
-@onready var anim: AnimatedSprite2D = character_body_2d.find_child("AnimatedSprite2D", true, false)
-@onready var life_container: HBoxContainer = $"../../CharacterBody2D/Camera2D/lifeContainer"
 @onready var animated_spike: AnimatedSprite2D = $Area2D/AnimatedSprite2D
 @onready var spike_frames = [8]
 @onready var walkway: CollisionShape2D = $walkway
@@ -11,10 +7,6 @@ extends StaticBody2D
 var body_inside = false
 var player_ref: CharacterBody2D = null
 var already_damaged = false
-
-func _ready():
-	checkpoint_position = $"../../checkpoints/first checkpoint".position
-	add_to_group("spikes")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

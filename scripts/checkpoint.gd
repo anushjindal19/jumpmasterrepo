@@ -1,5 +1,4 @@
 extends Area2D
-var level = 2
 @onready var anim_sprite = $AnimatedSprite2D  # Adjust path if needed
 @export var is_starting_checkpoint: bool = false  # Determines if it's the first checkpoint
 @export var is_ending_checkpoint: bool = false 
@@ -10,13 +9,7 @@ func _enter_tree():
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		var killzone = get_tree().get_first_node_in_group("killzone")
-		if killzone:
-			killzone.checkpoint_position = global_position
-		var spikes = get_tree().get_nodes_in_group("spikes")
-		for spike in spikes:
-			spike.checkpoint_position = global_position
-		body.checkpoint_position = global_position  # ✅ THIS IS THE MISSING LINE
+		body.checkpoint_position = global_position  # Where damage_player respawns the player
 		# Handle different animations
 		if is_starting_checkpoint:
 			anim_sprite.play("interacted")

@@ -42,12 +42,6 @@ func _physics_process(delta):
 			can_double_jump = false
 			is_double_jumping = true
 			can_jump = false  # Prevent playing double jump animation again
-		elif can_double_jump and not is_double_jumping and not is_on_floor():
-			velocity.y = JUMP_VELOCITY
-			anim.play("double_jump")
-			can_double_jump = false
-			is_double_jumping = true
-			can_jump = false
 	elif is_on_floor() or is_on_wall():
 		can_jump = true
 		can_double_jump = true
