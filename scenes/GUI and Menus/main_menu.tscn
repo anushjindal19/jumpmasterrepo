@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://errlvqslcov8"]
+[gd_scene load_steps=12 format=3 uid="uid://errlvqslcov8"]
 
 [ext_resource type="Script" uid="uid://brp15mgmffw6j" path="res://scripts/main_menu.gd" id="1_bl6hq"]
 [ext_resource type="Texture2D" uid="uid://dhe36ak82fh1b" path="res://assets/sprites/sIBk3JQtfYle-XfBf5_6TnFyVkRZ8tR_3a_wi1inOyU.webp" id="2_doqf2"]
 [ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_pga4x"]
+[ext_resource type="Theme" path="res://assets/menu_theme.tres" id="3_theme"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
 texture = ExtResource("2_doqf2")
@@ -99,9 +100,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
-offset_top = -66.0
+offset_top = -89.0
 offset_right = 125.0
-offset_bottom = 66.0
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
@@ -122,6 +123,23 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
 text = "Start New Game"
+
+[node name="Levels" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_pga4x")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqqt6")
+text = "Levels"
 
 [node name="Shop" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(250, 40)
@@ -203,9 +221,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -551.0
-offset_top = -216.0
+offset_top = -246.0
 offset_right = 551.0
-offset_bottom = -75.0
+offset_bottom = -105.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.768627, 0, 1)
@@ -221,8 +239,81 @@ libraries = {
 }
 autoplay = "typing"
 
+[node name="ConfirmNewGame" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_theme")
+
+[node name="Dim" type="ColorRect" parent="ConfirmNewGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.85)
+
+[node name="Panel" type="PanelContainer" parent="ConfirmNewGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -130.0
+offset_right = 340.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="ConfirmNewGame/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Message" type="Label" parent="ConfirmNewGame/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 8
+text = "Start a new game?
+
+This erases your unlocked levels,
+collected fruit, best scores,
+shop points and skins."
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="ConfirmNewGame/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Erase" type="Button" parent="ConfirmNewGame/Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(260, 40)
+layout_mode = 2
+text = "Erase and start"
+
+[node name="Cancel" type="Button" parent="ConfirmNewGame/Panel/VBox/Buttons"]
+custom_minimum_size = Vector2(260, 40)
+layout_mode = 2
+text = "Cancel"
+
 [connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ConfirmNewGame/Panel/VBox/Buttons/Erase" to="." method="_on_erase_pressed"]
+[connection signal="pressed" from="ConfirmNewGame/Panel/VBox/Buttons/Cancel" to="." method="_on_cancel_pressed"]

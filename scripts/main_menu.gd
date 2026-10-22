@@ -10,8 +10,29 @@ func _ready():
 	animation_player.play("idle")
 
 func _on_start_game_pressed() -> void:
-	PlayerUtils.current_level = 1
-	PlayerUtils.reload_current_level()
+	# Starting over erases the save, so ask first if there's anything to lose
+	if PlayerUtils.has_save():
+		$ConfirmNewGame.show()
+	else:
+		start_new_game()
+
+func start_new_game() -> void:
+	PlayerUtils.erase_save()
+	PlayerUtils.play_level(1)
+
+func _on_erase_pressed() -> void:
+	start_new_game()
+
+func _on_cancel_pressed() -> void:
+	$ConfirmNewGame.hide()
+
+func _unhandled_input(event):
+	if event.is_action_pressed("escape") and $ConfirmNewGame.visible:
+		$ConfirmNewGame.hide()
+
+
+func _on_levels_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/GUI and Menus/level_menu.tscn")
 
 
 func _on_shop_pressed() -> void:
