@@ -3,6 +3,8 @@ extends Control
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 func _ready():
+	if OS.has_feature("web"):
+		$PanelContainer/VBoxContainer/Quit.hide()
 	anim.play("fade_in")
 	await anim.animation_finished
 

@@ -3,6 +3,8 @@ extends Control
 @onready var bluranim: AnimationPlayer = $AnimationPlayer
 
 func _ready():
+	if OS.has_feature("web"):
+		$PanelContainer/VBoxContainer/Quit.hide()
 	bluranim.play("RESET")
 	hide()
 

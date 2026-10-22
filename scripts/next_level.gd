@@ -4,6 +4,8 @@ extends Control
 @onready var next_level_button: Button = $"PanelContainer/VBoxContainer/next level"
 
 func _ready() -> void:
+	if OS.has_feature("web"):
+		$PanelContainer/VBoxContainer/quit.hide()
 	# After the last level there's nowhere to go, so this becomes the end-of-game screen
 	if PlayerUtils.is_last_level():
 		$"YouBeatIt!".text = "GAME COMPLETE!"

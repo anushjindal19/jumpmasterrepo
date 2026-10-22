@@ -3,6 +3,9 @@ extends Control
 
 func _ready():
 	animation_player.play("idle")
+	# Quitting does nothing useful in a browser tab
+	if OS.has_feature("web"):
+		$VBoxContainer/Exit.hide()
 
 func _on_start_game_pressed() -> void:
 	PlayerUtils.current_level = 1
