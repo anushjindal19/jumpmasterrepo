@@ -30,6 +30,8 @@ NEW BEST SCORE!"
 	elif PlayerUtils.is_new_best_time:
 		text += "
 NEW BEST TIME!"
+	text += "
++%d shop points (%d to spend)" % [PlayerUtils.last_score, ShopData.points]
 	$Stats.text = text
 
 func _on_next_level_pressed() -> void:
