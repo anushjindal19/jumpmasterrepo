@@ -1,69 +1,8 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" uid="uid://bwpxdfbhmowdb" path="res://scripts/shop_menu.gd" id="1_shop"]
 [ext_resource type="Texture2D" uid="uid://dhe36ak82fh1b" path="res://assets/sprites/sIBk3JQtfYle-XfBf5_6TnFyVkRZ8tR_3a_wi1inOyU.webp" id="2_bg"]
-[ext_resource type="FontFile" uid="uid://dwyiv31ig70ne" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_font"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
-bg_color = Color(0.878431, 0.878431, 0.878431, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
-bg_color = Color(0.815686, 0.921569, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
-bg_color = Color(0.647059, 0.847059, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_disabled"]
-bg_color = Color(0.878431, 0.878431, 0.878431, 0.35)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
-content_margin_left = 16.0
-content_margin_top = 16.0
-content_margin_right = 16.0
-content_margin_bottom = 16.0
-bg_color = Color(0.0784314, 0.0941176, 0.141176, 0.75)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.815686, 0.921569, 1, 0.35)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="Theme" id="Theme_shop"]
-default_font = ExtResource("3_font")
-default_font_size = 16
-Button/colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
-Button/colors/font_disabled_color = Color(0.180392, 0.180392, 0.180392, 0.6)
-Button/colors/font_focus_color = Color(0.180392, 0.180392, 0.180392, 1)
-Button/colors/font_hover_color = Color(0.180392, 0.180392, 0.180392, 1)
-Button/colors/font_hover_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
-Button/colors/font_outline_color = Color(0.8, 0.8, 0.8, 1)
-Button/colors/font_pressed_color = Color(0.180392, 0.180392, 0.180392, 1)
-Button/constants/outline_size = 2
-Button/styles/disabled = SubResource("StyleBoxFlat_disabled")
-Button/styles/hover = SubResource("StyleBoxFlat_hover")
-Button/styles/normal = SubResource("StyleBoxFlat_normal")
-Button/styles/pressed = SubResource("StyleBoxFlat_pressed")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_card")
+[ext_resource type="Theme" path="res://assets/menu_theme.tres" id="3_theme"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bg"]
 texture = ExtResource("2_bg")
@@ -76,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_shop")
+theme = ExtResource("3_theme")
 script = ExtResource("1_shop")
 
 [node name="bg" type="Panel" parent="."]
