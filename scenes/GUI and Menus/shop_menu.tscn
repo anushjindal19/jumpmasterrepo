@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://2t87478t2nvv"]
 
 [ext_resource type="Script" uid="uid://bwpxdfbhmowdb" path="res://scripts/shop_menu.gd" id="1_shop"]
 [ext_resource type="Texture2D" uid="uid://dhe36ak82fh1b" path="res://assets/sprites/sIBk3JQtfYle-XfBf5_6TnFyVkRZ8tR_3a_wi1inOyU.webp" id="2_bg"]
-[ext_resource type="Theme" path="res://assets/menu_theme.tres" id="3_theme"]
+[ext_resource type="Theme" uid="uid://yk5jeohauk7r" path="res://assets/menu_theme.tres" id="3_theme"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bg"]
 texture = ExtResource("2_bg")
@@ -90,7 +90,6 @@ layout_mode = 2
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Cards/Template/VBox/Preview"]
 position = Vector2(94, 64)
-scale = Vector2(1, 1)
 
 [node name="Price" type="Label" parent="Cards/Template/VBox"]
 layout_mode = 2

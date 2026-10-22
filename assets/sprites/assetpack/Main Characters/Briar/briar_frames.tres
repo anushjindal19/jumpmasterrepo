@@ -1,12 +1,12 @@
-[gd_resource type="SpriteFrames" load_steps=70 format=3]
+[gd_resource type="SpriteFrames" load_steps=70 format=3 uid="uid://cs01v1x8jf0hi"]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Hit (128x128).png" id="1_wy51m"]
-[ext_resource type="Texture2D" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Double Jump (128x128).png" id="2_sj84v"]
-[ext_resource type="Texture2D" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Fall (128x128).png" id="3_jh5o2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Idle (128x128).png" id="4_ia7xw"]
-[ext_resource type="Texture2D" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Jump (128x128).png" id="5_nny26"]
-[ext_resource type="Texture2D" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Run (128x128).png" id="6_k0gwi"]
-[ext_resource type="Texture2D" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Wall Jump (128x128).png" id="7_yw44c"]
+[ext_resource type="Texture2D" uid="uid://cgpd4jh7gfre2" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Hit (128x128).png" id="1_wy51m"]
+[ext_resource type="Texture2D" uid="uid://bdudg60yv4r6l" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Double Jump (128x128).png" id="2_sj84v"]
+[ext_resource type="Texture2D" uid="uid://bbbowo61y4vm3" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Fall (128x128).png" id="3_jh5o2"]
+[ext_resource type="Texture2D" uid="uid://b3lhf0wfts1na" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Idle (128x128).png" id="4_ia7xw"]
+[ext_resource type="Texture2D" uid="uid://uu25hgwcqtwh" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Jump (128x128).png" id="5_nny26"]
+[ext_resource type="Texture2D" uid="uid://ctqofxpt3y5m5" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Run (128x128).png" id="6_k0gwi"]
+[ext_resource type="Texture2D" uid="uid://bdp6vg3cb5x6e" path="res://assets/sprites/assetpack/Main Characters/Briar/Briar - Wall Jump (128x128).png" id="7_yw44c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tnw3r"]
 atlas = ExtResource("1_wy51m")
