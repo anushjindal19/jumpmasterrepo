@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://dl3os3mfiypg"]
 
 [ext_resource type="Script" uid="uid://dce8q6sfscctu" path="res://scripts/player.gd" id="1_tuyoq"]
-[ext_resource type="SpriteFrames" uid="uid://cs01v1x8jf0hi" path="res://assets/sprites/assetpack/Main Characters/Briar/briar_frames.tres" id="2_frames"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/assetpack/Main Characters/Ninja Frog/ninja_frog_frames.tres" id="2_frames"]
 [ext_resource type="AudioStream" uid="uid://duylehmw7c3gq" path="res://assets/sounds/jump.wav" id="9_ur7pv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
-radius = 6.0
-height = 20.0
+radius = 8.0
+height = 22.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 5
@@ -14,14 +14,12 @@ collision_layer = 3
 script = ExtResource("1_tuyoq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
 sprite_frames = ExtResource("2_frames")
 animation = &"idle"
 autoplay = "idle"
-offset = Vector2(0, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(1, 4)
 shape = SubResource("CapsuleShape2D_smehm")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -6,14 +6,16 @@ extends Node
 signal points_changed(points: int)
 
 const CHARACTERS_DIR := "res://assets/sprites/assetpack/Main Characters/"
-const DEFAULT_SKIN := "briar"
-# "frames" is a SpriteFrames with the animations player.gd plays (128x128 frames, drawn at 1/3 scale).
+const DEFAULT_SKIN := "ninja_frog"
+# "frames" is a SpriteFrames with the animations player.gd plays (32x32 frames, drawn at 1:1).
 # "icon" is the part of the first idle frame shown as a life in the HUD.
 # The shop lists them in this order.
+# Briar, Ferro and Wick (128x128, drawn at 1/4) are kept in Main Characters for later.
 const SKINS := {
-	"briar": {"name": "Briar", "frames": CHARACTERS_DIR + "Briar/briar_frames.tres", "icon": Rect2(34, 14, 56, 56), "price": 0},
-	"ferro": {"name": "Ferro", "frames": CHARACTERS_DIR + "Ferro/ferro_frames.tres", "icon": Rect2(34, 32, 56, 56), "price": 2000},
-	"wick": {"name": "Wick", "frames": CHARACTERS_DIR + "Wick/wick_frames.tres", "icon": Rect2(32, 30, 56, 56), "price": 4000},
+	"ninja_frog": {"name": "Ninja Frog", "frames": CHARACTERS_DIR + "Ninja Frog/ninja_frog_frames.tres", "icon": Rect2(4, 8, 23, 24), "price": 0},
+	"pink_man": {"name": "Pink Man", "frames": CHARACTERS_DIR + "Pink Man/pink_man_frames.tres", "icon": Rect2(4, 8, 23, 24), "price": 2000},
+	"mask_dude": {"name": "Mask Dude", "frames": CHARACTERS_DIR + "Mask Dude/mask_dude_frames.tres", "icon": Rect2(4, 8, 23, 24), "price": 4000},
+	"virtual_guy": {"name": "Virtual Guy", "frames": CHARACTERS_DIR + "Virtual Guy/virtual_guy_frames.tres", "icon": Rect2(4, 8, 23, 24), "price": 6000},
 }
 
 var points := 0
