@@ -6,8 +6,8 @@ extends Camera2D
 # Horizontally it shows more of the level in the direction the player is running.
 # Sits under the player in each level, but positions itself in world space.
 
-@export var base_zoom := 4.0
-@export var min_zoom := 2.0  # The furthest it zooms out
+@export var base_zoom := 3.0
+@export var min_zoom := 1.5  # The furthest it zooms out
 @export var headroom := 72.0  # Space kept above the head of a standing player (a single jump is 50 px)
 @export var look_ahead := 0.2  # Extra view in the running direction, as a fraction of the view width
 @export var horizontal_speed := 3.0  # How quickly each part catches up (higher = snappier)
